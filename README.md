@@ -26,4 +26,4 @@ as `Samples/` inside each SDK repository and reference the SDK by local path.
 
 ## License
 
-MIT. See [`LICENSE`](LICENSE).
+Apache 2.0. See [`LICENSE`](LICENSE) and [`NOTICE`](NOTICE).
