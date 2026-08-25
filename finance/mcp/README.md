@@ -30,6 +30,18 @@ metabind publish
 addresses anything in your org. Use the printed org and project IDs to
 configure the clients (`apple/Config/Local.xcconfig`).
 
+`install` creates components and tools only — it doesn't upload assets or
+apply the project settings in `metabind.jsonc` (thumbnail, MCP icon). To carry
+the icon over, upload the app icon and point both settings at it:
+
+```sh
+metabind asset upload ../apple/AppIcon.xcassets/AppIcon.appiconset/finance-icon-2.png
+metabind project update <projectId> --data '{"settings":{"thumbnailUrl":"<cdnUrl>","mcp":{"icons":[{"src":"<cdnUrl>","sizes":["1024x1024"],"mimeType":"image/png"}]}}}'
+```
+
+Pass `--org` and `--project` explicitly on every mutating command; without
+them the CLI targets whatever project `metabind use` last persisted.
+
 ## Edit
 
 Edit the source under `components/`, then:
