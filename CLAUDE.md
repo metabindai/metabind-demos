@@ -32,6 +32,7 @@ SDK repos' `Samples/` directories, not here. Keep that boundary.
   `metabind publish`. Use the `metabind` skill; don't hand-write API calls.
 - **Adding a demo**: create `<name>/{apple,android,mcp}` plus `<name>/README.md`
   and add a row to the root README table.
+- **Licensing**: every copyable unit (`<demo>/apple`, `<demo>/mcp`, …) carries its own Apache 2.0 `LICENSE` + `NOTICE` in addition to the root ones, because demos are meant to be copied out as starters. Add both when adding a platform folder.
 - **Do not commit** unless explicitly instructed.
 
 ## Commands

@@ -54,3 +54,7 @@ metabind publish
 
 Re-pull with `metabind pull --out finance/mcp` to refresh this tree from its
 source project.
+
+## License
+
+Apache 2.0. See [`LICENSE`](LICENSE) and [`NOTICE`](NOTICE).

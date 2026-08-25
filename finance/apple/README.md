@@ -177,4 +177,4 @@ A custom surface must also:
 
 ## License
 
-Apache 2.0. See [`LICENSE`](../../LICENSE) and [`NOTICE`](../../NOTICE).
+Apache 2.0. See [`LICENSE`](LICENSE) and [`NOTICE`](NOTICE).
