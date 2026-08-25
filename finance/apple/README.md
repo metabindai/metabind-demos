@@ -11,10 +11,11 @@ routed to purpose-built surfaces instead of a message list.
 
 ## Data and backend
 
-This repository contains the Apple client, not the Finance MCP project or its
-data. Before running the app, clone or import the Finance MCP project into your
-own Metabind organization and configure this client with that organization's
-stable internal ID and the cloned project's ID.
+The Finance MCP project lives alongside this client in [`../mcp`](../mcp).
+Before running the app, install it into your own Metabind organization
+(`metabind install --dir ../mcp --yes`, see that directory's README) and
+configure this client with that organization's stable internal ID and the
+installed project's ID.
 
 The supplied Finance MCP project uses synthetic financial data, such as sample
 transactions, spending categories, balances, and net-worth history. The app

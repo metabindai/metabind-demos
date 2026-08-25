@@ -1,0 +1,90 @@
+{
+  "components": {
+    "GetNetWorth": {
+      "hash": "sha256:4cd6805d6a0993bce61fd1e7d83eb8a3220a5ff251ab0936be6486f70f4952fc",
+      "id": "nCwd2EFCaF1S39LqCKb5",
+      "status": "published",
+      "version": 9
+    },
+    "GetSpendingBreakdown": {
+      "hash": "sha256:bf35f4d0a9f62c6bad56ef1af7f7e0eea36cb09595efd010e0208e956e120200",
+      "id": "80KzfwXg70oObgi8bMXB",
+      "status": "published",
+      "version": 8
+    },
+    "GetSubscriptions": {
+      "hash": "sha256:e8f8b02e2326e68a60bcb85d3946633888b4a28d425a4fe4814976ffa9263355",
+      "id": "LNDhe8oqVx2bxzbQKKTO",
+      "status": "published",
+      "version": 6
+    },
+    "GetTransactions": {
+      "hash": "sha256:4205c8aeac76b7295de8ada55ee95fe4797a25f46a775b929c6bdc75ac1428ea",
+      "id": "xxXAh5RjElkbEvmpvrea",
+      "status": "published",
+      "version": 14
+    },
+    "NetWorthTrend": {
+      "hash": "sha256:f0fd7264b58bb0b9941a916da7831b12491fef510255a4e29b9e371f8c17812c",
+      "id": "k9OmCnQax1HlanHIiVMK",
+      "status": "published",
+      "version": 22
+    },
+    "SpendingBreakdown": {
+      "hash": "sha256:975f304b133473c4c6708f0270c8907f53f0173f33046422be992326bec4d518",
+      "id": "z8KVb4MiEjLSyFC9ddKz",
+      "status": "published",
+      "version": 21
+    },
+    "Subscriptions": {
+      "hash": "sha256:0654a59c8691ba270e5236dfabe4c42b6e05541db9c3e6b6184592a2ab666e63",
+      "id": "stuWC7Mmpd87JNE6vTdP",
+      "status": "published",
+      "version": 14
+    },
+    "TransactionList": {
+      "hash": "sha256:0aa911a0c6407da033167fdd8aa37a4b489e5a0f0c462fe0156041b00aea518c",
+      "id": "0nH1jmKlINlLBEpSES6S",
+      "status": "published",
+      "version": 23
+    },
+    "TrendCard": {
+      "hash": "sha256:1d010c0e528c185581f26cc298ef29a4a7ef176b6c59c044a85cb311630dc4c8",
+      "id": "eZpF73tzwtvWn8IqftbE",
+      "status": "published",
+      "version": 13
+    }
+  },
+  "content": {},
+  "package": "0.0.46",
+  "packageCreatedAt": "2026-08-17T07:27:29.948Z",
+  "tools": {
+    "get_net_worth": {
+      "pinnedVersion": "0.0.44"
+    },
+    "get_spending_breakdown": {
+      "pinnedVersion": "0.0.44"
+    },
+    "get_subscriptions": {
+      "pinnedVersion": "0.0.44"
+    },
+    "get_transactions": {
+      "pinnedVersion": "0.0.44"
+    },
+    "net_worth_trend": {
+      "pinnedVersion": "0.0.45"
+    },
+    "spending_breakdown": {
+      "pinnedVersion": "0.0.44"
+    },
+    "subscriptions": {
+      "pinnedVersion": "0.0.44"
+    },
+    "transaction_list": {
+      "pinnedVersion": "0.0.44"
+    },
+    "trend_card": {
+      "pinnedVersion": "0.0.46"
+    }
+  }
+}

@@ -1,0 +1,13 @@
+{
+  "$schema": "../../.metabind/schemas/tool.json",
+  "config": {
+    "annotations": {
+      "idempotentHint": true,
+      "readOnlyHint": true
+    }
+  },
+  "description": "Raw transactions by category or merchant, ~12 months of history. Numbers to reason with — to display, use transaction_list.",
+  "packageVersion": "0.0.44",
+  "rootComponent": "GetTransactions",
+  "templateContentIds": []
+}

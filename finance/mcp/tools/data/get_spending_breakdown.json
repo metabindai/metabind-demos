@@ -1,0 +1,13 @@
+{
+  "$schema": "../../.metabind/schemas/tool.json",
+  "config": {
+    "annotations": {
+      "idempotentHint": true,
+      "readOnlyHint": true
+    }
+  },
+  "description": "Categorized spending + prior-period comparison. Numbers to reason with — to display, use spending_breakdown.",
+  "packageVersion": "0.0.44",
+  "rootComponent": "GetSpendingBreakdown",
+  "templateContentIds": []
+}

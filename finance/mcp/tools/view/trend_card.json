@@ -1,0 +1,13 @@
+{
+  "$schema": "../../.metabind/schemas/tool.json",
+  "config": {
+    "allowedComponents": [],
+    "annotations": {
+      "title": "Trend Card"
+    }
+  },
+  "description": "Any metric over time that has no dedicated card — one category's spend by month, a series you computed. Points are {label, value} in display order. Set upIsGood=false for cost-like metrics. Use chartStyle:'bar' whenever the user compares periods — month by month, or over the last 3/6/12 months; give each point a `series` name (repeating the label once per series) to stack them with a legend. Pass `items` to list the composition behind the number.",
+  "packageVersion": "0.0.46",
+  "rootComponent": "TrendCard",
+  "templateContentIds": []
+}

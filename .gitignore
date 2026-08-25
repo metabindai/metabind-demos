@@ -5,7 +5,6 @@ DerivedData/
 .swiftpm/
 *.xcodeproj/xcuserdata/
 *.xcodeproj/project.xcworkspace/xcuserdata/
-.vscode/
 .claude/
 *.env
 **/Config/Local.xcconfig

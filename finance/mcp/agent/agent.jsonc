@@ -1,0 +1,11 @@
+// Hosted-chat agent settings (project.settings.agent).
+// The system prompt lives in ./system-prompt.md and is pushed as one field with this file.
+// The provider apiKey is write-only server side: hasApiKey is the only readable signal,
+// and no file in this tree ever holds the value.
+{
+  "effort": "high",
+  "hasApiKey": true,
+  "maxTokens": 4096,
+  "model": "claude-sonnet-5",
+  "provider": "anthropic"
+}
