@@ -11,6 +11,7 @@ components/view/*.ts     BindJS UI tools rendered natively in the app —
 tools/<kind>/*.json      tool definitions (name, description, secrets, annotations)
 metabind.jsonc           project settings; prose in mcp-instructions.md
 agent/                   hosted-chat agent settings; prompt in system-prompt.md
+assets/files/            the project thumbnail, synced down from the project
 .metabind/sdk/           generated typings for authoring components
 ```
 
@@ -74,55 +75,47 @@ part: every room design is a generated image. Leave `GEMINI_API_KEY` unbound and
 the rest of the assistant still works — product search, comparison, specs and
 selection are all catalogue-driven.
 
-## Requirements
+## Install
 
-The `metabind` CLI, **0.9.0 or newer**:
-
-```sh
-brew install metabindai/tap/metabind
-metabind --version
-```
-
-## Install into your organization
+One command creates this tree as a project in your organization, as drafts
+(`metabind` CLI, 0.9.0 or newer, run from this directory):
 
 ```sh
-metabind auth login
-metabind inspect --dir retail/mcp          # what the tree declares
-metabind install --dir retail/mcp --name "Oak & Ivory" --yes
-metabind agent set --provider anthropic --key ...   # hosted chat needs an LLM key
-metabind publish
+metabind install --dir . --yes
 ```
 
-`install` mints fresh ids and writes the sync baseline
-(`.metabind/state.json`) for the project it just created. Use the printed org and
-project IDs to configure the client (`apple/Config/Local.xcconfig`).
+`--yes` consents to what the tree declares — the secrets and outbound calls
+above; `metabind inspect --dir .` shows the same before anything is created.
+The project doesn't work until the secrets are bound.
 
-Pass `--org` and `--project` explicitly on the first sync of a fresh checkout —
-there is no baseline to read them from until one exists.
+The start-to-finish walkthrough — CLI setup, secrets, publishing, the project
+thumbnail, and running the iOS app — is [the demo tutorial](../README.md). For
+installing and signing in to the CLI itself, see
+[Install and Sign In](https://docs.metabind.ai/cli/install).
 
-`install` creates components and tools only — it doesn't upload assets or apply
-the project settings in `metabind.jsonc`. `metabind.jsonc` names the thumbnail
-by asset name, so it resolves only once that asset exists in your project.
-
-The image ships in `assets/files/`, synced down from the project — not read out
-of the iOS app. Upload it, then apply the settings:
-
-```sh
-metabind asset upload assets/files/project-thumbnail.png
-metabind project update <projectId> --from-file metabind.jsonc
-```
-
-Assets are pull-only: they are edited in the Studio, `metabind pull --with-assets`
-brings the binaries down into `assets/files/`, and `push` discards any edit to
-`assets/assets.json`.
-
-## Edit
+## Edit and push
 
 ```sh
 metabind validate component components/view/ProductCard.ts
 metabind push        # from a checkout pulled from your own project
 metabind publish
 ```
+
+Re-pull with `metabind pull --out .` to refresh this tree from its source
+project.
+
+Sync details worth knowing:
+
+- Pass `--org` and `--project` explicitly on the first sync of a fresh
+  checkout — there is no baseline to read them from until one exists — and on
+  every mutating command; without them the CLI targets whatever project
+  `metabind use` last persisted.
+- Assets are pull-only: they are edited in the Studio,
+  `metabind pull --with-assets` brings the binaries down into `assets/files/`,
+  and `push` discards any edit to `assets/assets.json`.
+
+How sync works end to end — pull, push, conflicts, and repairing local state —
+is documented in [Flat-File Sync](https://docs.metabind.ai/cli/flat-file-sync).
 
 ## License
 

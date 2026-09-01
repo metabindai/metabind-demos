@@ -1,4 +1,4 @@
-# Metabind Retail Demo (Apple)
+# Metabind Retail demo (Apple)
 
 Oak&Ivory — a furniture store's shopping assistant, built on
 [`MetabindAI`](https://github.com/metabindai/metabind-apple), Metabind's governed
@@ -14,9 +14,10 @@ read both before deciding which one your product is.
 ## Data and backend
 
 The Retail MCP project lives alongside this client in [`../mcp`](../mcp). Before
-running the app, install it into your own Metabind organization (see that
-directory's README) and configure this client with that organization's stable
-internal ID and the installed project's ID.
+running the app, install it into your own Metabind organization —
+[Part 1 of the demo tutorial](../README.md#part-1--install-the-mcp-project)
+walks through it, secrets included — and configure this client with that
+organization's stable internal ID and the installed project's ID.
 
 All catalogue data is synthetic. Oak&Ivory is a fictional store; the products,
 prices and imagery come from the MCP project, not from a real inventory system.
@@ -44,27 +45,29 @@ One Metabind API key authenticates both the agent proxy and the MCP server.
 
 ## Configure a local build
 
-Copy the public template to the ignored local configuration file:
+1. Copy the public template to the ignored local configuration file:
 
-```sh
-cp Config/Local.xcconfig.example Config/Local.xcconfig
-```
+   ```sh
+   cp Config/Local.xcconfig.example Config/Local.xcconfig
+   ```
 
-Fill in the values:
+2. Fill in the values:
 
-```xcconfig
-RETAIL_DEMO_BUNDLE_ID = com.yourcompany.MetabindRetailDemo
-RETAIL_DEMO_ORG_ID = your_stable_internal_org_id
-RETAIL_DEMO_PROJECT_ID = your_project_id
-RETAIL_DEMO_API_KEY =
-DEVELOPMENT_TEAM = YOUR_TEAM_ID
-```
+   ```xcconfig
+   RETAIL_DEMO_BUNDLE_ID = com.yourcompany.MetabindRetailDemo
+   RETAIL_DEMO_ORG_ID = your_stable_internal_org_id
+   RETAIL_DEMO_PROJECT_ID = your_project_id
+   RETAIL_DEMO_API_KEY =
+   DEVELOPMENT_TEAM = YOUR_TEAM_ID
+   ```
 
-- `RETAIL_DEMO_ORG_ID` must be the stable internal ID, not an organization slug.
-- `RETAIL_DEMO_API_KEY` is optional. Leave it empty to enter the key on first
-  launch. Set it only for a controlled demo build that should start without setup.
-- `RETAIL_DEMO_BUNDLE_ID` and `DEVELOPMENT_TEAM` are required for a signed device
-  or distribution build. The public defaults stay generic.
+   - `RETAIL_DEMO_ORG_ID` must be the stable internal ID, not an organization
+     slug.
+   - `RETAIL_DEMO_API_KEY` is optional. Leave it empty to enter the key on
+     first launch. Set it only for a controlled demo build that should start
+     without setup.
+   - `RETAIL_DEMO_BUNDLE_ID` and `DEVELOPMENT_TEAM` are required for a signed
+     device or distribution build. The public defaults stay generic.
 
 `Config/Local.xcconfig` is gitignored. Do not commit it.
 

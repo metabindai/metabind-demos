@@ -12,6 +12,7 @@ metabind.jsonc           project settings; prose in mcp-instructions.md
 agent/                   hosted-chat agent settings; prompt in system-prompt.md
 scripts/                 the shared synthetic feed and the checks that keep
                          every card reconciled against it
+assets/files/            the project thumbnail, synced down from the project
 .metabind/sdk/           generated typings for authoring components
 ```
 
@@ -24,6 +25,8 @@ rather than inheriting ours.
 All financial data is synthetic. Nothing here reads a secret or calls an
 external host (`metabind inspect --dir .` confirms).
 
+## How the data stays consistent
+
 Every card reads one feed, so any two cards showing the same figure agree. That
 is enforced, not assumed: `scripts/shared-feed.js` is the single source, and
 `node scripts/sync-shared-feed.mjs --check` fails if a component's injected copy
@@ -32,55 +35,21 @@ account balances summing to net worth, savings tracking net-worth growth,
 category totals matching the transaction list. Run both before pushing a change
 to any data component.
 
-## Requirements
+## Install
 
-The `metabind` CLI, **0.9.0 or newer**:
-
-```sh
-brew install metabindai/tap/metabind
-metabind --version
-```
-
-## Install into your organization
+One command creates this tree as a project in your organization, as drafts
+(`metabind` CLI, 0.9.0 or newer, run from this directory):
 
 ```sh
-metabind auth login
-metabind inspect --dir finance/mcp          # what the tree declares
-metabind install --dir finance/mcp --name "Banking Assistant" --yes
-metabind agent set --provider anthropic --key ...   # hosted chat needs an LLM key
-metabind publish
+metabind install --dir . --yes
 ```
 
-`install` mints fresh ids and writes the sync baseline
-(`.metabind/state.json`) for the project it just created. Use the printed org
-and project IDs to configure the clients (`apple/Config/Local.xcconfig`,
-`android/local.properties`).
+The start-to-finish walkthrough — CLI setup, publishing, the project icon, and
+running the iOS and Android apps — is [the demo tutorial](../README.md). For
+installing and signing in to the CLI itself, see
+[Install and Sign In](https://docs.metabind.ai/cli/install).
 
-Pass `--org` and `--project` explicitly on the first sync of a fresh checkout —
-there is no baseline to read them from until one exists.
-
-`install` creates components and tools only — it doesn't upload assets or
-apply the project settings in `metabind.jsonc`. No icon *URL* is checked in: a
-CDN address is stamped with the org, project and asset ids that own it, so it
-means nothing in another project.
-
-The icon image itself ships in `assets/files/`, synced down from the project —
-it is not read out of the iOS app. Upload it into your own project and point
-both settings at the URL you get back:
-
-```sh
-metabind asset upload assets/files/project-thumbnail.png
-metabind project update <projectId> --data '{"settings":{"thumbnailUrl":"<cdnUrl>","mcp":{"icons":[{"src":"<cdnUrl>","sizes":["1024x1024"],"mimeType":"image/png"}]}}}'
-```
-
-Assets are pull-only: they are edited in the Studio, `metabind pull --with-assets`
-brings the binaries down into `assets/files/`, and `push` discards any edit to
-`assets/assets.json`.
-
-Pass `--org` and `--project` explicitly on every mutating command; without
-them the CLI targets whatever project `metabind use` last persisted.
-
-## Edit
+## Edit and push
 
 Edit the source under `components/`, then:
 
@@ -93,8 +62,21 @@ metabind push        # from a checkout pulled from your own project
 metabind publish
 ```
 
-Re-pull with `metabind pull --out finance/mcp` to refresh this tree from its
-source project.
+Re-pull with `metabind pull --out .` to refresh this tree from its source
+project.
+
+Sync details worth knowing:
+
+- Pass `--org` and `--project` explicitly on the first sync of a fresh
+  checkout — there is no baseline to read them from until one exists — and on
+  every mutating command; without them the CLI targets whatever project
+  `metabind use` last persisted.
+- Assets are pull-only: they are edited in the Studio,
+  `metabind pull --with-assets` brings the binaries down into `assets/files/`,
+  and `push` discards any edit to `assets/assets.json`.
+
+How sync works end to end — pull, push, conflicts, and repairing local state —
+is documented in [Flat-File Sync](https://docs.metabind.ai/cli/flat-file-sync).
 
 ## License
 
