@@ -1,24 +1,54 @@
 # Retail MCP project
 
-The Metabind MCP project behind the Oak&Ivory demo — the tools the assistant
-calls and the BindJS components it renders. One file per object:
+The server half of the Oak&Ivory demo: the tools the assistant calls and the
+BindJS components it renders, kept as flat files you can read, edit, and push
+with the `metabind` CLI. The iOS client in [`../apple`](../apple) talks to a
+copy of this project running in your own Metabind organization.
 
-```
-components/data/*.ts     data tools — catalogue search and lookup, inspiration
-                         search, image generation
-components/view/*.ts     BindJS UI tools rendered natively in the app —
-                         product cards, comparisons, pickers, room designs
-tools/<kind>/*.json      tool definitions (name, description, secrets, annotations)
-metabind.jsonc           project settings; prose in mcp-instructions.md
-agent/                   hosted-chat agent settings; prompt in system-prompt.md
-assets/files/            the project thumbnail, synced down from the project
-.metabind/sdk/           generated typings for authoring components
-```
+## What's inside
 
-This tree is project **source**, not a checkout of ours. The sync bookkeeping —
-`.metabind/state.json`, `metabind.resolved` and `.metabind/secrets.json` — is
-per-checkout state and is gitignored, so your first sync establishes a baseline
-against *your* project rather than inheriting ours.
+Everything the project is made of lives in this tree, one file per object:
+
+| Path | What it holds |
+|---|---|
+| `components/data/*.ts` | Handlers for the four data tools, plus `CacheImage`, an internal image cache. |
+| `components/view/*.ts` | 22 BindJS view components: the ten card surfaces the assistant renders, and the shared building blocks behind them. |
+| `tools/data/*.json` | The tool definitions the model sees — name, description, secrets, and annotations — one file per tool. |
+| `tools/view/*.json` | Matching definitions for the card tools. |
+| `metabind.jsonc` | Project settings. The prose instructions the MCP server serves to clients live next to it in `mcp-instructions.md`. |
+| `agent/` | Settings for the hosted-chat agent, with the system prompt in `agent/system-prompt.md`. |
+| `assets/files/` | The project thumbnail, synced down from the project. |
+| `.metabind/sdk/` | Generated TypeScript typings that give you autocompletion while authoring components. |
+
+The data tools read the catalogue and generate imagery:
+
+| Tool | What it does |
+|---|---|
+| `product_search` | Searches the Oak&Ivory catalogue; its compact mode returns just ids for other tools to expand |
+| `product_lookup` | Fetches full product records by id — called by view components to load their own data, not by the model |
+| `inspiration_search` | Style-reference imagery from the shared asset library |
+| `nano_banana_image_generator` | Generates room and product imagery with Gemini — needs `GEMINI_API_KEY` |
+
+`CacheImage` is a fifth data component with no tool of its own: an image
+cache wrapped around the generator, so repeating a room design doesn't pay
+for a second generation.
+
+The view tools are the surfaces the assistant can put on screen:
+
+| Tool | Renders |
+|---|---|
+| `product_carousel` | A browsable carousel of products |
+| `product_detail` | A product detail card: imagery, features, reviews, call to action |
+| `product_comparison` | A comparison table across products and dimensions |
+| `product_specs` | A spec-sheet card |
+| `product_selection`, `palette_color_selection` | Selection flows — pick the products or the palette a design starts from |
+| `product_groupings`, `product_recommendation` | Grouped suggestions and personalized recommendations |
+| `interior_designer` | The room-design surface |
+| `inspiration_card_stack` | A stack of style-inspiration images |
+
+The remaining view components — brand backgrounds, the script font, the
+logo, the error card — aren't tools; they're shared building blocks the card
+surfaces compose, which is what keeps every card on-brand.
 
 ## It is not self-contained
 
@@ -77,8 +107,13 @@ selection are all catalogue-driven.
 
 ## Install
 
-One command creates this tree as a project in your organization, as drafts
-(`metabind` CLI, 0.9.0 or newer, run from this directory):
+This tree is project **source**, not a checkout of ours. The per-checkout
+sync state — `.metabind/state.json`, `metabind.resolved` and
+`.metabind/secrets.json` — is gitignored, so nothing in it addresses our
+project.
+
+One command turns it into a project in your organization (`metabind` CLI,
+0.9.0 or newer, run from this directory):
 
 ```sh
 metabind install --dir . --yes
@@ -86,36 +121,56 @@ metabind install --dir . --yes
 
 `--yes` consents to what the tree declares — the secrets and outbound calls
 above; `metabind inspect --dir .` shows the same before anything is created.
-The project doesn't work until the secrets are bound.
+`install` mints fresh ids for everything it creates and writes this
+checkout's sync baseline against the new project — so after installing, this
+directory is a live checkout of *your* project, ready to edit and push.
+Everything is created as drafts; the project doesn't work until the secrets
+are bound, and nothing serves traffic until you publish.
 
-The start-to-finish walkthrough — CLI setup, secrets, publishing, the project
-thumbnail, and running the iOS app — is [the demo tutorial](../README.md). For
-installing and signing in to the CLI itself, see
-[Install and Sign In](https://docs.metabind.ai/cli/install).
+The start-to-finish walkthrough — CLI setup, secrets, publishing, the
+project thumbnail, and running the iOS app — is
+[the demo tutorial](../README.md). For installing and signing in to the CLI
+itself, see [Install and Sign In](https://docs.metabind.ai/cli/install).
 
 ## Edit and push
 
-```sh
-metabind validate component components/view/ProductCard.ts
-metabind push        # from a checkout pulled from your own project
-metabind publish
-```
+After install, the copy of this project on the server is the source of
+truth, and this directory is a checkout of it. The loop:
 
-Re-pull with `metabind pull --out .` to refresh this tree from its source
-project.
+1. Edit the source — a card in `components/view/`, a handler in
+   `components/data/`, the system prompt in `agent/`.
+2. Validate before writing anything to the server:
 
-Sync details worth knowing:
+   ```sh
+   metabind validate component components/view/ProductCard.ts
+   ```
+
+3. Preview, apply, release. `push` writes drafts; nothing reaches the
+   published MCP app until you publish:
+
+   ```sh
+   metabind push --plan     # report what would change, write nothing
+   metabind push
+   metabind publish
+   ```
+
+Sync rules that save surprises:
 
 - Pass `--org` and `--project` explicitly on the first sync of a fresh
-  checkout — there is no baseline to read them from until one exists — and on
-  every mutating command; without them the CLI targets whatever project
+  checkout — there is no baseline to read them from until one exists — and
+  on every mutating command; without them the CLI targets whatever project
   `metabind use` last persisted.
-- Assets are pull-only: they are edited in the Studio,
-  `metabind pull --with-assets` brings the binaries down into `assets/files/`,
-  and `push` discards any edit to `assets/assets.json`.
+- A push that would overwrite a change made in Studio is refused, not
+  merged, and there is no partial apply — resolve the conflict, then push
+  again.
+- Assets are pull-only: they are managed in the Studio,
+  `metabind pull --with-assets` brings the binaries down into
+  `assets/files/`, and `push` discards any edit to `assets/assets.json`.
+- To refresh this directory after edits made in the Studio, re-pull with
+  `metabind pull --out .`.
 
-How sync works end to end — pull, push, conflicts, and repairing local state —
-is documented in [Flat-File Sync](https://docs.metabind.ai/cli/flat-file-sync).
+The full sync model — conflicts, renames, repairing local state — is
+documented in [Flat-File Sync](https://docs.metabind.ai/cli/flat-file-sync).
 
 ## License
 

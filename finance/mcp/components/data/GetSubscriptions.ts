@@ -16,14 +16,13 @@
 // Every one of those is now read off the rows, so the card cannot disagree with
 // the transaction list beneath it, and "we detected these" is literally true.
 
-// ═══ BEGIN SHARED FEED — generated, do not edit here ═══
+// ═══ BEGIN SHARED FEED ═══
 // ═══════════════════════════════════════════════════════════════════════════
 // SHARED FEED — the single source of truth for the Vault demo.
 //
-// DO NOT EDIT THIS BLOCK INSIDE A COMPONENT. Edit scripts/shared-feed.js and
-// run `node scripts/sync-shared-feed.mjs` to inject it into every component
-// that needs it. `--check` verifies the copies are identical and is what stops
-// them drifting apart again.
+// This block is identical in every data component that needs it. If you change
+// it, change it in all of them — any two cards showing the same figure are
+// expected to agree.
 //
 // Why it is duplicated at all: BindJS components are deployed independently and
 // the flat-file tree has no shared-library directory, so there is no import to
