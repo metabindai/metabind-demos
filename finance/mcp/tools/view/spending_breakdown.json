@@ -1,13 +1,6 @@
 {
-  "$schema": "../../.metabind/schemas/tool.json",
-  "config": {
-    "allowedComponents": [],
-    "annotations": {
-      "title": "Spending Breakdown"
-    }
-  },
+  "$schema": "../../.metabind/sdk/schemas/view-tool.schema.json",
+  "title": "Spending Breakdown",
   "description": "Spending split by category for a period: a composition bar plus a ranked category list. It loads its own data — pass the period alone for the whole picture, which is what a broad 'where did my money go' question wants. Use highlight only on a follow-up about particular categories; it dims everything else, so on an opening question it hides most of the answer.",
-  "packageVersion": "0.0.44",
-  "rootComponent": "SpendingBreakdown",
-  "templateContentIds": []
+  "component": "SpendingBreakdown"
 }

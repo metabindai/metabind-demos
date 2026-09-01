@@ -1,13 +1,6 @@
 {
-  "$schema": "../../.metabind/schemas/tool.json",
-  "config": {
-    "allowedComponents": [],
-    "annotations": {
-      "title": "Transaction List"
-    }
-  },
+  "$schema": "../../.metabind/sdk/schemas/view-tool.schema.json",
+  "title": "Transaction List",
   "description": "Individual purchases for a category or a merchant: the window total plus the matching transactions. It loads its own data. Plain terms like 'restaurants', 'groceries' or 'gas' resolve to categories; omit both filters for all spending. Do NOT use this when the user asks how much they spent over the last 3, 6 or 12 months — that is a period comparison, so use trend_card with chartStyle:'bar' instead.",
-  "packageVersion": "0.0.44",
-  "rootComponent": "TransactionList",
-  "templateContentIds": []
+  "component": "TransactionList"
 }

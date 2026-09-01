@@ -334,12 +334,29 @@ const PERIOD_LABELS = {
     "1y": "Past 12 months", all: "All time",
 };
 
+// A calendar month-to-date window is empty at the start of a month. On the 1st
+// it spans zero days, so "this month" reported $89.47 — one dinner — and the
+// card opened looking broken. For the first week of a month `mtd` therefore
+// resolves to the trailing 30 days instead.
+//
+// It resolves to a DIFFERENT period rather than quietly widening `mtd`, because
+// the caller reads the period back off the result and renders its label from
+// it: the card says "Last 30 days" and compares against the 30 before that.
+// Answering "this month" with a rolling window is only honest while the window
+// is also called a rolling one.
+const MTD_MIN_DAYS = 7;
+
+function resolvePeriod(period, now) {
+    if (period !== "mtd") return period;
+    return now.getDate() - 1 < MTD_MIN_DAYS ? "30d" : period;
+}
+
 // Days back from today that a period reaches. `ytd` is computed, not
 // tabulated: it used to be a frozen scale of 5.35 months, which is right on
 // exactly one day of the year.
 //
-// 30, not 31, for mtd: a 31-day window fits a 30.44-day monthly subscription
-// twice, which reads as a double charge. Matches GetTransactions.
+// `mtd` is a true calendar month-to-date, except in the first week of a month,
+// where resolvePeriod sends it to `30d` — see the note above.
 // A window is a pair of day offsets back from today, newest end first:
 // {newest: 0, oldest: 30} is the last 30 days. Both ends matter. A window that
 // sits entirely in the past — "last month" ended before today began — cannot be
@@ -469,8 +486,8 @@ export default defineDataSource({
     },
     annotations: { readOnlyHint: true, idempotentHint: true },
     handler: async (props, env) => {
-        const period = PERIOD_LABELS[props.period] ? props.period : "mtd";
         const now = new Date();
+        const period = resolvePeriod(PERIOD_LABELS[props.period] ? props.period : "mtd", now);
         const win = periodWindow(period, now);
         const oldest = Math.min(MAX_DAYS, win.oldest);
         const newest = Math.min(win.newest, oldest);
