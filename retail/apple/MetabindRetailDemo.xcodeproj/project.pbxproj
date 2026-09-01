@@ -1,0 +1,384 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 77;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		B0000000000000000000000001 /* ChatView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0000000000000000000000001 /* ChatView.swift */; };
+		B0000000000000000000000002 /* DemoConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0000000000000000000000002 /* DemoConfig.swift */; };
+		B0000000000000000000000003 /* MessageRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0000000000000000000000003 /* MessageRow.swift */; };
+		B0000000000000000000000004 /* MetabindRetailDemoApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0000000000000000000000004 /* MetabindRetailDemoApp.swift */; };
+		B0000000000000000000000005 /* RootView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0000000000000000000000005 /* RootView.swift */; };
+		B0000000000000000000000006 /* StarterChip.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0000000000000000000000006 /* StarterChip.swift */; };
+		B0000000000000000000000007 /* StarterScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0000000000000000000000007 /* StarterScreen.swift */; };
+		B0000000000000000000000008 /* SuggestionChips.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0000000000000000000000008 /* SuggestionChips.swift */; };
+		B0000000000000000000000009 /* SuggestionService.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0000000000000000000000009 /* SuggestionService.swift */; };
+		B000000000000000000000000A /* Theme.swift in Sources */ = {isa = PBXBuildFile; fileRef = A000000000000000000000000A /* Theme.swift */; };
+		C0000000000000000000A001 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A1000000000000000000A001 /* Assets.xcassets */; };
+		C0000000000000000000A002 /* MetabindAI in Frameworks */ = {isa = PBXBuildFile; productRef = D0000000000000000000A001 /* MetabindAI */; };
+		C0000000000000000000A003 /* MetabindContent in Frameworks */ = {isa = PBXBuildFile; productRef = D0000000000000000000A002 /* MetabindContent */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		A0000000000000000000000001 /* ChatView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatView.swift; sourceTree = "<group>"; };
+		A0000000000000000000000002 /* DemoConfig.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DemoConfig.swift; sourceTree = "<group>"; };
+		A0000000000000000000000003 /* MessageRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageRow.swift; sourceTree = "<group>"; };
+		A0000000000000000000000004 /* MetabindRetailDemoApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MetabindRetailDemoApp.swift; sourceTree = "<group>"; };
+		A0000000000000000000000005 /* RootView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootView.swift; sourceTree = "<group>"; };
+		A0000000000000000000000006 /* StarterChip.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StarterChip.swift; sourceTree = "<group>"; };
+		A0000000000000000000000007 /* StarterScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StarterScreen.swift; sourceTree = "<group>"; };
+		A0000000000000000000000008 /* SuggestionChips.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SuggestionChips.swift; sourceTree = "<group>"; };
+		A0000000000000000000000009 /* SuggestionService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SuggestionService.swift; sourceTree = "<group>"; };
+		A000000000000000000000000A /* Theme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Theme.swift; sourceTree = "<group>"; };
+		A1000000000000000000A001 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		A1000000000000000000A002 /* RetailDemo.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = RetailDemo.xcconfig; sourceTree = "<group>"; };
+		A1000000000000000000A003 /* Local.xcconfig.example */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Local.xcconfig.example; sourceTree = "<group>"; };
+		A1000000000000000000A004 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		A1000000000000000000A005 /* MetabindRetailDemo.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = MetabindRetailDemo.entitlements; sourceTree = "<group>"; };
+		A1000000000000000000A006 /* Oak&Ivory.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Oak&Ivory.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		E0000000000000000000A001 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C0000000000000000000A002 /* MetabindAI in Frameworks */,
+				C0000000000000000000A003 /* MetabindContent in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		F0000000000000000000A001 /* MetabindRetailDemo */ = {
+			isa = PBXGroup;
+			children = (
+				A0000000000000000000000001 /* ChatView.swift */,
+				A0000000000000000000000002 /* DemoConfig.swift */,
+				A0000000000000000000000003 /* MessageRow.swift */,
+				A0000000000000000000000004 /* MetabindRetailDemoApp.swift */,
+				A0000000000000000000000005 /* RootView.swift */,
+				A0000000000000000000000006 /* StarterChip.swift */,
+				A0000000000000000000000007 /* StarterScreen.swift */,
+				A0000000000000000000000008 /* SuggestionChips.swift */,
+				A0000000000000000000000009 /* SuggestionService.swift */,
+				A000000000000000000000000A /* Theme.swift */,
+				A1000000000000000000A004 /* Info.plist */,
+			);
+			path = MetabindRetailDemo;
+			sourceTree = "<group>";
+		};
+		F0000000000000000000A002 /* Sources */ = {
+			isa = PBXGroup;
+			children = (
+				F0000000000000000000A001 /* MetabindRetailDemo */,
+			);
+			path = Sources;
+			sourceTree = "<group>";
+		};
+		F0000000000000000000A003 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				A1000000000000000000A001 /* Assets.xcassets */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		F0000000000000000000A004 /* Config */ = {
+			isa = PBXGroup;
+			children = (
+				A1000000000000000000A002 /* RetailDemo.xcconfig */,
+				A1000000000000000000A003 /* Local.xcconfig.example */,
+			);
+			path = Config;
+			sourceTree = "<group>";
+		};
+		F0000000000000000000A005 = {
+			isa = PBXGroup;
+			children = (
+				A1000000000000000000A005 /* MetabindRetailDemo.entitlements */,
+				F0000000000000000000A004 /* Config */,
+				F0000000000000000000A003 /* Resources */,
+				F0000000000000000000A002 /* Sources */,
+				F0000000000000000000A006 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		F0000000000000000000A006 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				A1000000000000000000A006 /* Oak&Ivory.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		1000000000000000000000A1 /* MetabindRetailDemo */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 2000000000000000000000A1 /* Build configuration list for PBXNativeTarget "MetabindRetailDemo" */;
+			buildPhases = (
+				3000000000000000000000A1 /* Sources */,
+				E0000000000000000000A001 /* Frameworks */,
+				4000000000000000000000A1 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = MetabindRetailDemo;
+			packageProductDependencies = (
+				D0000000000000000000A001 /* MetabindAI */,
+				D0000000000000000000A002 /* MetabindContent */,
+			);
+			productName = MetabindRetailDemo;
+			productReference = A1000000000000000000A006 /* Oak&Ivory.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		5000000000000000000000A1 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = YES;
+				LastUpgradeCheck = 1600;
+			};
+			buildConfigurationList = 2000000000000000000000A2 /* Build configuration list for PBXProject "MetabindRetailDemo" */;
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				Base,
+				en,
+			);
+			mainGroup = F0000000000000000000A005;
+			minimizedProjectReferenceProxies = 1;
+			packageReferences = (
+				6000000000000000000000A1 /* XCRemoteSwiftPackageReference "metabind-apple" */,
+			);
+			preferredProjectObjectVersion = 77;
+			productRefGroup = F0000000000000000000A006 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				1000000000000000000000A1 /* MetabindRetailDemo */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		4000000000000000000000A1 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C0000000000000000000A001 /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		3000000000000000000000A1 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B0000000000000000000000001 /* ChatView.swift in Sources */,
+				B0000000000000000000000002 /* DemoConfig.swift in Sources */,
+				B0000000000000000000000003 /* MessageRow.swift in Sources */,
+				B0000000000000000000000004 /* MetabindRetailDemoApp.swift in Sources */,
+				B0000000000000000000000005 /* RootView.swift in Sources */,
+				B0000000000000000000000006 /* StarterChip.swift in Sources */,
+				B0000000000000000000000007 /* StarterScreen.swift in Sources */,
+				B0000000000000000000000008 /* SuggestionChips.swift in Sources */,
+				B0000000000000000000000009 /* SuggestionService.swift in Sources */,
+				B000000000000000000000000A /* Theme.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		7000000000000000000000A1 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = A1000000000000000000A002 /* RetailDemo.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = MetabindRetailDemo.entitlements;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CURRENT_PROJECT_VERSION = 1;
+				DERIVE_MACCATALYST_PRODUCT_BUNDLE_IDENTIFIER = NO;
+				GENERATE_INFOPLIST_FILE = NO;
+				INFOPLIST_FILE = Sources/MetabindRetailDemo/Info.plist;
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.developer-tools";
+				INFOPLIST_KEY_NSHumanReadableCopyright = "© 2026 YAP Studios";
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "$(RETAIL_DEMO_BUNDLE_ID)";
+				PRODUCT_NAME = "Oak&Ivory";
+				SDKROOT = iphoneos;
+				SUPPORTS_MACCATALYST = YES;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
+				SWIFT_VERSION = 5.11;
+				TARGETED_DEVICE_FAMILY = "1,2,6";
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		7000000000000000000000A2 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = A1000000000000000000A002 /* RetailDemo.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = MetabindRetailDemo.entitlements;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CURRENT_PROJECT_VERSION = 1;
+				DERIVE_MACCATALYST_PRODUCT_BUNDLE_IDENTIFIER = NO;
+				GENERATE_INFOPLIST_FILE = NO;
+				INFOPLIST_FILE = Sources/MetabindRetailDemo/Info.plist;
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.developer-tools";
+				INFOPLIST_KEY_NSHumanReadableCopyright = "© 2026 YAP Studios";
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "$(RETAIL_DEMO_BUNDLE_ID)";
+				PRODUCT_NAME = "Oak&Ivory";
+				SDKROOT = iphoneos;
+				SUPPORTS_MACCATALYST = YES;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
+				SWIFT_VERSION = 5.11;
+				TARGETED_DEVICE_FAMILY = "1,2,6";
+			};
+			name = Release;
+		};
+		7000000000000000000000A3 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				COPY_PHASE_STRIP = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				MACOSX_DEPLOYMENT_TARGET = 14.0;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SWIFT_VERSION = 5.0;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_TESTABILITY = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				ONLY_ACTIVE_ARCH = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		7000000000000000000000A4 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				COPY_PHASE_STRIP = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				MACOSX_DEPLOYMENT_TARGET = 14.0;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SWIFT_VERSION = 5.0;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		2000000000000000000000A1 /* Build configuration list for PBXNativeTarget "MetabindRetailDemo" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				7000000000000000000000A1 /* Debug */,
+				7000000000000000000000A2 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+		2000000000000000000000A2 /* Build configuration list for PBXProject "MetabindRetailDemo" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				7000000000000000000000A3 /* Debug */,
+				7000000000000000000000A4 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		6000000000000000000000A1 /* XCRemoteSwiftPackageReference "metabind-apple" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/metabindai/metabind-apple.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.5.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		D0000000000000000000A001 /* MetabindAI */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 6000000000000000000000A1 /* XCRemoteSwiftPackageReference "metabind-apple" */;
+			productName = MetabindAI;
+		};
+		D0000000000000000000A002 /* MetabindContent */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 6000000000000000000000A1 /* XCRemoteSwiftPackageReference "metabind-apple" */;
+			productName = MetabindContent;
+		};
+/* End XCSwiftPackageProductDependency section */
+	};
+	rootObject = 5000000000000000000000A1 /* Project object */;
+}
