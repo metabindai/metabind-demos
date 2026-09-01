@@ -1,0 +1,6 @@
+{
+  "$schema": "../../.metabind/sdk/schemas/view-tool.schema.json",
+  "title": "Product Carousel",
+  "description": "A UI component that displays multiple products in a rotating or scrollable carousel interface for browsing.",
+  "component": "ProductCarousel"
+}

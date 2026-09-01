@@ -1,0 +1,6 @@
+{
+  "$schema": "../../.metabind/sdk/schemas/view-tool.schema.json",
+  "title": "Product Recommendations",
+  "description": "Presents product recommendations",
+  "component": "ProductRecommendation"
+}

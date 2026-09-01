@@ -1,0 +1,14 @@
+// Hosted-chat agent settings (project.settings.agent).
+// systemPrompt lives in ./system-prompt.md — pushed as one field with this file.
+// The LLM provider apiKey is write-only (KMS-encrypted server-side) and never
+// syncs; whether one is set (`agentHasApiKey`) is reported in .metabind/state.json.
+// provider/model/maxTokens are server-authoritative: push keeps the server's
+// current values whenever these still match the last pull, so a web-UI model
+// change (and the key bound to it) survives unrelated pushes. Edit them here
+// and the edit is pushed as usual.
+{
+  "effort": "low",
+  "maxTokens": 4096,
+  "model": "claude-sonnet-4-6",
+  "provider": "anthropic"
+}

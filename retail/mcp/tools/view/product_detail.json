@@ -1,0 +1,6 @@
+{
+  "$schema": "../../.metabind/sdk/schemas/view-tool.schema.json",
+  "title": "Product Detail",
+  "description": "A split-out product detail card with image, CTA, description, features, and reviews.\nAlways try and pass features based off the description/ information you know about the product.",
+  "component": "ProductDetail"
+}

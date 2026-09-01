@@ -1,0 +1,13 @@
+# Per-checkout sync state, not project source. All three are written by the
+# sync tooling and address entities in one specific org and project, so a
+# committed copy would point every checkout at ours. A fresh checkout has no
+# baseline — establish one against your own project with an explicit
+# --org/--project on the first pull.
+.metabind/state.json
+metabind.resolved
+
+# Secrets are KMS-encrypted server-side and never sync. Never commit.
+.metabind/secrets.json
+
+.DS_Store
+node_modules/
