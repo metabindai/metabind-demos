@@ -3,7 +3,7 @@
  * `product_lookup` MCP tool on appear (and whenever the id changes) to
  * hydrate the title + source image. The source image is then handed to the
  * shared `GeneratedImage` component, which owns the call to the
- * `openai_image_generator` tool plus all generating / error / fallback
+ * `nano_banana_image_generator` tool plus all generating / error / fallback
  * rendering.
  *
  * `dimensions` and `specifications` stay as caller-supplied inputs —

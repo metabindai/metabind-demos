@@ -14,7 +14,7 @@
   "description": "Personal finance demo",
   "name": "Banking Assistant",
   "settings": {
-    "thumbnail": "finance-icon-2 (2).png"
+    "thumbnail": "project-thumbnail.png"
   },
   "slug": "finance-app",
   "type": "mcp"

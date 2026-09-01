@@ -1,6 +1,6 @@
 /**
  * Shared error panel for MCP tool failures (e.g. when the host hasn't
- * configured an OpenAI API key). Rendered in place of whatever content
+ * configured a Gemini API key). Rendered in place of whatever content
  * the failed tool was supposed to produce.
  */
 
@@ -40,7 +40,7 @@ const body = (props: InferProps<typeof properties>): Component => {
 
 const previews = [
     Self({
-        message: "OpenAI API key not configured. Set OPENAI_API_KEY in the project's environment to enable image generation."
+        message: "Gemini API key not configured. Set GEMINI_API_KEY in the project's environment to enable image generation."
     }).previewName("Missing API key"),
     Self({
         message: "Rate limit exceeded. Try again in a few seconds."

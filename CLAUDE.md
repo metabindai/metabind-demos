@@ -26,10 +26,13 @@ SDK repos' `Samples/` directories, not here. Keep that boundary.
 - **Secrets**: never commit org IDs, project IDs, API keys, team IDs, or bundle
   IDs tied to a private account. Apple demos use `Config/Local.xcconfig`
   (gitignored) with a committed `Local.xcconfig.example`; Xcode Cloud writes it
-  from environment variables in `ci_scripts/ci_post_clone.sh`.
+  from environment variables in `ci_scripts/ci_post_clone.sh`. One deliberate
+  exception: the shared read-only `METABIND_API_KEY` for the public demo
+  catalogue is committed in `retail/mcp/README.md`. Leave it there.
 - **MCP projects**: edit source under `<demo>/mcp`, validate with
-  `metabind validate`, push with `metabind component update`, then
+  `metabind validate`, send drafts up with `metabind push`, then
   `metabind publish`. Use the `metabind` skill; don't hand-write API calls.
+- **CLI version**: `metabind` **0.9.0+** (`brew install metabindai/tap/metabind`).
 - **Adding a demo**: create `<name>/{apple,android,mcp}` plus `<name>/README.md`
   and add a row to the root README table.
 - **Licensing**: every copyable unit (`<demo>/apple`, `<demo>/mcp`, …) carries its own Apache 2.0 `LICENSE` + `NOTICE` in addition to the root ones, because demos are meant to be copied out as starters. Add both when adding a platform folder.
