@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  finance-demo launcher mark: an ascending bar chart with a pie chart resting on
+  the tallest bar. Drawn in the 108dp adaptive-icon viewport, content kept inside
+  a centered 62 x 50 box so the launcher masks never clip it.
+
+  The bars are one stroked path (round caps == the rounded bar ends) sharing a
+  single vertical gradient, so the tallest bar reads lightest. The pie is three
+  stacked shapes: a black disc that acts as the separating ring against the bars,
+  the white disc, then the green slice.
+-->
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:aapt="http://schemas.android.com/aapt"
+    android:width="108dp"
+    android:height="108dp"
+    android:viewportWidth="108"
+    android:viewportHeight="108">
+
+    <path
+        android:pathData="M28.17,61.53 L28.17,71.13 M41.22,49.75 L41.22,71.13 M53.91,42.49 L53.91,71.13 M66.6,33.96 L66.6,71.13"
+        android:strokeWidth="10.34"
+        android:strokeLineCap="round">
+        <aapt:attr name="android:strokeColor">
+            <gradient
+                android:type="linear"
+                android:startX="0"
+                android:startY="28.79"
+                android:endX="0"
+                android:endY="78"
+                android:startColor="#97E8A2"
+                android:endColor="#3FA349" />
+        </aapt:attr>
+    </path>
+
+    <path
+        android:fillColor="#000000"
+        android:pathData="M53.1,63.25 A15.95,15.95 0 1 1 85,63.25 A15.95,15.95 0 1 1 53.1,63.25 Z" />
+
+    <path
+        android:fillColor="#FFFFFF"
+        android:pathData="M54.91,63.25 A14.14,14.14 0 1 1 83.19,63.25 A14.14,14.14 0 1 1 54.91,63.25 Z" />
+
+    <path
+        android:fillColor="#56B75E"
+        android:pathData="M69.05,63.25 L69.05,49.11 A14.14,14.14 0 0 1 82.98,65.71 Z" />
+</vector>
