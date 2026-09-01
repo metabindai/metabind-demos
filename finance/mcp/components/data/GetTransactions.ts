@@ -336,13 +336,29 @@ const PERIOD_LABELS = {
     "1y": "Past 12 months", all: "All time",
 };
 
+// A calendar month-to-date window is empty at the start of a month. On the 1st
+// it spans zero days, so "this month" reported $89.47 — one dinner — and the
+// card opened looking broken. For the first week of a month `mtd` therefore
+// resolves to the trailing 30 days instead.
+//
+// It resolves to a DIFFERENT period rather than quietly widening `mtd`, because
+// the caller reads the period back off the result and renders its label from
+// it: the card says "Last 30 days" and compares against the 30 before that.
+// Answering "this month" with a rolling window is only honest while the window
+// is also called a rolling one.
+const MTD_MIN_DAYS = 7;
+
+function resolvePeriod(period, now) {
+    if (period !== "mtd") return period;
+    return now.getDate() - 1 < MTD_MIN_DAYS ? "30d" : period;
+}
+
 // How many days back a period reaches from today. `ytd` is calendar-anchored so
 // it is computed, not tabulated — a fixed constant for "year to date" is wrong
 // on every day of the year except one.
 //
-// `mtd` stays a rolling 30 days rather than a true calendar month-to-date: 30,
-// not 31, because a 31-day window fits a 30.44-day monthly subscription twice,
-// which reads as a double charge on the card.
+// `mtd` is a true calendar month-to-date, except in the first week of a month,
+// where resolvePeriod sends it to `30d` — see the note there.
 // A window is a pair of day offsets back from today, newest end first:
 // {newest: 0, oldest: 30} is the last 30 days. Both ends matter. A window that
 // sits entirely in the past — "last month" ended before today began — cannot be
@@ -701,12 +717,13 @@ export default defineDataSource({
         } else {
             // The feed only covers MAX_DAYS, so long windows clamp to it rather
             // than reporting an empty stretch before the history begins.
-            const win = periodWindow(period, now);
+            const resolved = resolvePeriod(period, now);
+            const win = periodWindow(resolved, now);
             oldest = Math.min(MAX_DAYS, win.oldest);
             newest = Math.min(win.newest, oldest);
             priorOldest = win.priorOldest;
             priorNewest = win.priorNewest;
-            periodLabel = PERIOD_LABELS[period] || "This month";
+            periodLabel = PERIOD_LABELS[resolved] || "This month";
         }
 
         const dateLabel = (daysAgo) => {

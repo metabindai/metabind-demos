@@ -1,29 +1,3 @@
 {
-  "json.schemas": [
-    {
-      "fileMatch": [
-        "/tools/**/*.json"
-      ],
-      "url": "./.metabind/schemas/tool.json"
-    },
-    {
-      "fileMatch": [
-        "/content/*.json"
-      ],
-      "url": "./.metabind/schemas/content.json"
-    },
-    {
-      "fileMatch": [
-        "/metabind.jsonc"
-      ],
-      "url": "./.metabind/schemas/project.json"
-    },
-    {
-      "fileMatch": [
-        "/agent/agent.jsonc"
-      ],
-      "url": "./.metabind/schemas/agent.json"
-    }
-  ],
   "typescript.tsdk": "node_modules/typescript/lib"
 }

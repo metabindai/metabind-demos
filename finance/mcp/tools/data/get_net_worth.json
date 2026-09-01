@@ -1,13 +1,9 @@
 {
-  "$schema": "../../.metabind/schemas/tool.json",
-  "config": {
-    "annotations": {
-      "idempotentHint": true,
-      "readOnlyHint": true
-    }
-  },
+  "$schema": "../../.metabind/sdk/schemas/data-tool.schema.json",
   "description": "Net worth history + account balances. Numbers to reason with — to display, use net_worth_trend.",
-  "packageVersion": "0.0.44",
-  "rootComponent": "GetNetWorth",
-  "templateContentIds": []
+  "component": "GetNetWorth",
+  "annotations": {
+    "idempotentHint": true,
+    "readOnlyHint": true
+  }
 }

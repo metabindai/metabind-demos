@@ -340,14 +340,30 @@ const PERIOD_LABELS = {
     "1y": "Past 12 months", all: "All time",
 };
 
+// A calendar month-to-date window is empty at the start of a month. On the 1st
+// it spans zero days, so "this month" reported $89.47 — one dinner — and the
+// card opened looking broken. For the first week of a month `mtd` therefore
+// resolves to the trailing 30 days instead.
+//
+// It resolves to a DIFFERENT period rather than quietly widening `mtd`, because
+// the caller reads the period back off the result and renders its label from
+// it: the card says "Last 30 days" and compares against the 30 before that.
+// Answering "this month" with a rolling window is only honest while the window
+// is also called a rolling one.
+const MTD_MIN_DAYS = 7;
+
+function resolvePeriod(period, now) {
+    if (period !== "mtd") return period;
+    return now.getUTCDate() - 1 < MTD_MIN_DAYS ? "30d" : period;
+}
+
 // Days back from `today` (UTC-normalised) that a period reaches. `ytd` is
 // calendar-anchored, so it's computed rather than tabulated.
 //
-// `mtd` is a rolling 30 days here, not a true calendar month-to-date, purely to
-// agree with the spending tools — those need 30 so a monthly subscription can't
-// land in the window twice. `all` reaches further back than the transaction
-// feed does (24 months vs 12), which is fine: beyond the feed the curve
-// extrapolates at the same savings rate.
+// `mtd` is a true calendar month-to-date, except in the first week of a month,
+// where resolvePeriod sends it to `30d` — see the note there. `all` reaches
+// further back than the transaction feed does (24 months vs 12), which is fine:
+// beyond the feed the curve extrapolates at the same savings rate.
 // A window is a pair of day offsets back from today, newest end first:
 // {newest: 0, oldest: 30} is the last 30 days. Both ends matter. A window that
 // sits entirely in the past — "last month" ended before today began — cannot be
@@ -614,9 +630,9 @@ export default defineDataSource({
     },
     annotations: { readOnlyHint: true, idempotentHint: true },
     handler: async (props, env) => {
-        const period = PERIOD_LABELS[props.period] ? props.period : "1y";
         const today = new Date();
         today.setUTCHours(0, 0, 0, 0);
+        const period = resolvePeriod(PERIOD_LABELS[props.period] ? props.period : "1y", today);
         const todayDay = toDay(today);
 
         // Resolve the range. Explicit dates win; otherwise the period maps to a

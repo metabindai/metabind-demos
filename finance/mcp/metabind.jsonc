@@ -1,17 +1,12 @@
-// Project settings — the client-writable projection of `metabind project get`.
-// Prose lives in files: ./mcp-instructions.md and ./agent/system-prompt.md.
-// Server-stamped fields (id, timestamps, mcpUrl, version counters) are in .metabind/state.json.
-// `permissions` is server-managed and rides along as context; push does not send it.
+// Metabind project settings — the client-writable projection of `metabind project get`.
+// Prose fields are files: ./mcp-instructions.md (settings.mcp.instructions),
+// ./agent/system-prompt.md (settings.agent.systemPrompt).
+// Server-stamped fields (id, timestamps, mcpUrl, publish version) live in .metabind/state.json.
+// Fields outside this file (permissions, …) are web-administered — push never touches them.
+// `thumbnail` references an asset in ./assets/files by name; sync resolves it.
 {
   "description": "Personal finance demo",
   "name": "Banking Assistant",
-  "permissions": {
-    "public": true,
-    "roles": {
-      "admin": [],
-      "editor": []
-    }
-  },
   "settings": {
     "mcp": {
       "icons": [
@@ -22,11 +17,9 @@
           ],
           "src": "https://cdn.metabind.ai/IgJH0BzIn4LlfnCbcDc7/GLbHk5i3GLlIYcF63XFl/assets/KmzF1pF5Q1gHeE8G0pQy/finance-icon-2%20(2).png"
         }
-      ],
-      "version": "0.0.17"
+      ]
     },
-    "supportedLocales": [],
-    "thumbnailUrl": "https://cdn.metabind.ai/IgJH0BzIn4LlfnCbcDc7/GLbHk5i3GLlIYcF63XFl/assets/KmzF1pF5Q1gHeE8G0pQy/finance-icon-2%20(2).png"
+    "thumbnail": "finance-icon-2 (2).png"
   },
   "slug": "finance-app",
   "type": "mcp"

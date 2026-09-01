@@ -1,16 +1,17 @@
 {
+  "_comment": "Publish record (Package.resolved analog). Written by pull/publish; never hand-edited.",
   "components": {
     "GetNetWorth": {
-      "hash": "sha256:4cd6805d6a0993bce61fd1e7d83eb8a3220a5ff251ab0936be6486f70f4952fc",
+      "hash": "sha256:5915f1f67a9e81cb63edd502829e8903475391eebdc05c41f727d99049120a38",
       "id": "nCwd2EFCaF1S39LqCKb5",
       "status": "published",
-      "version": 9
+      "version": 10
     },
     "GetSpendingBreakdown": {
-      "hash": "sha256:bf35f4d0a9f62c6bad56ef1af7f7e0eea36cb09595efd010e0208e956e120200",
+      "hash": "sha256:74ed1d5373d68945638560f436efa7785878eb881dd679a8ff1d94de136c0cfc",
       "id": "80KzfwXg70oObgi8bMXB",
       "status": "published",
-      "version": 8
+      "version": 9
     },
     "GetSubscriptions": {
       "hash": "sha256:e8f8b02e2326e68a60bcb85d3946633888b4a28d425a4fe4814976ffa9263355",
@@ -19,10 +20,10 @@
       "version": 6
     },
     "GetTransactions": {
-      "hash": "sha256:4205c8aeac76b7295de8ada55ee95fe4797a25f46a775b929c6bdc75ac1428ea",
+      "hash": "sha256:6020abd52a01893979b6a56fd378346d4dfcf9a3d5c902d7ca208d366c6f9890",
       "id": "xxXAh5RjElkbEvmpvrea",
       "status": "published",
-      "version": 14
+      "version": 15
     },
     "NetWorthTrend": {
       "hash": "sha256:f0fd7264b58bb0b9941a916da7831b12491fef510255a4e29b9e371f8c17812c",
@@ -55,36 +56,58 @@
       "version": 13
     }
   },
-  "content": {},
-  "package": "0.0.46",
-  "packageCreatedAt": "2026-08-17T07:27:29.948Z",
+  "package": "0.0.47",
+  "packageCreatedAt": "2026-09-01T01:12:28.988Z",
+  "packageMetadata": {
+    "author": "pCkvCNbqVVfKnzdMzoFf",
+    "description": "mtd falls back to trailing 30 days in the first week of a month",
+    "tags": []
+  },
   "tools": {
     "get_net_worth": {
-      "pinnedVersion": "0.0.44"
+      "introducedVersion": "0.0.1",
+      "pinnedVersion": "0.0.47",
+      "status": "published"
     },
     "get_spending_breakdown": {
-      "pinnedVersion": "0.0.44"
+      "introducedVersion": "0.0.1",
+      "pinnedVersion": "0.0.47",
+      "status": "published"
     },
     "get_subscriptions": {
-      "pinnedVersion": "0.0.44"
+      "introducedVersion": "0.0.1",
+      "pinnedVersion": "0.0.44",
+      "status": "published"
     },
     "get_transactions": {
-      "pinnedVersion": "0.0.44"
+      "introducedVersion": "0.0.1",
+      "pinnedVersion": "0.0.47",
+      "status": "published"
     },
     "net_worth_trend": {
-      "pinnedVersion": "0.0.45"
+      "introducedVersion": "0.0.1",
+      "pinnedVersion": "0.0.45",
+      "status": "published"
     },
     "spending_breakdown": {
-      "pinnedVersion": "0.0.44"
+      "introducedVersion": "0.0.1",
+      "pinnedVersion": "0.0.44",
+      "status": "published"
     },
     "subscriptions": {
-      "pinnedVersion": "0.0.44"
+      "introducedVersion": "0.0.1",
+      "pinnedVersion": "0.0.44",
+      "status": "published"
     },
     "transaction_list": {
-      "pinnedVersion": "0.0.44"
+      "introducedVersion": "0.0.1",
+      "pinnedVersion": "0.0.44",
+      "status": "published"
     },
     "trend_card": {
-      "pinnedVersion": "0.0.46"
+      "introducedVersion": "0.0.2",
+      "pinnedVersion": "0.0.46",
+      "status": "published"
     }
   }
 }
