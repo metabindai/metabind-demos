@@ -7,7 +7,7 @@ every platform client plus the MCP project it depends on:
 
 ```
 <demo>/apple    Xcode project
-<demo>/android  Gradle project (placeholder until metabind-android publishes releases)
+<demo>/android  Gradle project
 <demo>/mcp      Metabind MCP project exported with the metabind CLI
 ```
 
@@ -40,4 +40,11 @@ SDK repos' `Samples/` directories, not here. Keep that boundary.
 ```bash
 # Apple
 cd finance/apple && xcodebuild -project MetabindFinanceDemo.xcodeproj -scheme MetabindFinanceDemo -destination 'generic/platform=iOS Simulator' build
+
+# Android — needs gpr.user/gpr.key (or GITHUB_ACTOR/GITHUB_TOKEN); GitHub
+# Packages requires auth even to read a public package.
+cd finance/android && ./gradlew :app:assembleDebug
+
+# MCP — after touching any data component
+cd finance/mcp && node scripts/sync-shared-feed.mjs --check && node scripts/reconcile.mjs
 ```

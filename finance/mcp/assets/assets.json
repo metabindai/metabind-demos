@@ -1,12 +1,3 @@
-[
-  {
-    "description": "",
-    "name": "chart-icon2 (1).png",
-    "tags": []
-  },
-  {
-    "description": "",
-    "name": "finance-icon-2 (2).png",
-    "tags": []
-  }
-]
+{
+  "$schema": "../.metabind/sdk/schemas/assets.schema.json"
+}

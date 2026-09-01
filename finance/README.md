@@ -7,7 +7,7 @@ There is no transcript — assistant turns are routed to purpose-built surfaces.
 | Directory | Contents |
 |---|---|
 | [`apple/`](apple) | iOS app on `MetabindAI` (`MetabindAssistant`), SDK pinned by release tag |
-| [`android/`](android) | Pending — waiting on published `metabind-android` releases |
+| [`android/`](android) | Android app on `metabindai-android` (`MetabindAssistant`), SDK pinned in the version catalog |
 | [`mcp/`](mcp) | The Finance MCP project: BindJS components, tools, and synthetic financial data |
 
 All financial data is synthetic. Clone or import the `mcp/` project into your
