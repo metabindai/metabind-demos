@@ -5,8 +5,8 @@
  * lookup pipeline can't run, so example products are rendered instead so
  * composer previews and dev sandboxes still look meaningful.
  *
- * Once the prompt + product images are in, the view calls
- * `openai_image_generator` to render the interior mock-up.
+ * Once the prompt + product images are in, the view hands them to the shared
+ * `GeneratedImage` component to render the interior mock-up.
  */
 
 // ─── Metadata ─────────────────────────────────────────────

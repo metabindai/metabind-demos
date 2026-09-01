@@ -5,7 +5,7 @@ calls and the BindJS components it renders. One file per object:
 
 ```
 components/data/*.ts     data tools — catalogue search and lookup, inspiration
-                         search, two image generators
+                         search, image generation
 components/view/*.ts     BindJS UI tools rendered natively in the app —
                          product cards, comparisons, pickers, room designs
 tools/<kind>/*.json      tool definitions (name, description, secrets, annotations)
@@ -40,28 +40,48 @@ the top of the three data components and point `CATALOGUE_BASE` in
 
 ## Secrets this project needs
 
-Retail reaches out, so it will not work until you bind three secrets. Two of them
-are paid third-party APIs.
+Retail reaches out, so it will not work until you bind two secrets. One of them
+is a paid third-party API.
 
 | Secret | Used by | What it is |
 |---|---|---|
 | `METABIND_API_KEY` | `product_search`, `product_lookup`, `inspiration_search` | Reads the `Product Database` content project over the Metabind content API |
-| `OPENAI_API_KEY` | `openai_image_generator` | Room and product imagery |
-| `GEMINI_API_KEY` | `nano_banana_image_generator` | Alternative image generator |
+| `GEMINI_API_KEY` | `nano_banana_image_generator` | Room and product imagery |
+
+`METABIND_API_KEY` is published here on purpose: it is a shared, read-only key
+for the public demo catalogue, the same for everyone, and it is the only way the
+demo has products. Use it as-is — it is not yours to rotate, and it grants
+nothing beyond reading that one content project.
 
 ```sh
-metabind env set METABIND_API_KEY --value ...
-metabind env set OPENAI_API_KEY --value ...
-metabind env set GEMINI_API_KEY --value ...
+metabind env set METABIND_API_KEY=74723201c99afe0e4a0c1feeb6be5f4e55392992798ff57d776461e753084119
 ```
+
+`GEMINI_API_KEY` is your own paid key:
+
+```sh
+metabind env set GEMINI_API_KEY=...
+```
+
+That puts the value in shell history and `ps -ef`. To avoid it, pass it on
+stdin: `echo $KEY | metabind env set GEMINI_API_KEY --value-stdin`.
 
 Secret values are KMS-encrypted server-side and never sync into this tree —
 `.metabind/secrets.json` records only the names.
 
-The image generators are what make the demo feel alive, but they are also the
-expensive part: every room design is an image generation. Leave `OPENAI_API_KEY`
-and `GEMINI_API_KEY` unbound and the rest of the assistant still works — product
-search, comparison, specs and selection are all catalogue-driven.
+Image generation is what makes the demo feel alive, but it is also the expensive
+part: every room design is a generated image. Leave `GEMINI_API_KEY` unbound and
+the rest of the assistant still works — product search, comparison, specs and
+selection are all catalogue-driven.
+
+## Requirements
+
+The `metabind` CLI, **0.9.0 or newer**:
+
+```sh
+brew install metabindai/tap/metabind
+metabind --version
+```
 
 ## Install into your organization
 
@@ -81,8 +101,20 @@ Pass `--org` and `--project` explicitly on the first sync of a fresh checkout �
 there is no baseline to read them from until one exists.
 
 `install` creates components and tools only — it doesn't upload assets or apply
-the project settings in `metabind.jsonc`. The project thumbnail is referenced by
-name and has to be uploaded into your own project before it resolves.
+the project settings in `metabind.jsonc`. `metabind.jsonc` names the thumbnail
+by asset name, so it resolves only once that asset exists in your project.
+
+The image ships in `assets/files/`, synced down from the project — not read out
+of the iOS app. Upload it, then apply the settings:
+
+```sh
+metabind asset upload assets/files/project-thumbnail.png
+metabind project update <projectId> --from-file metabind.jsonc
+```
+
+Assets are pull-only: they are edited in the Studio, `metabind pull --with-assets`
+brings the binaries down into `assets/files/`, and `push` discards any edit to
+`assets/assets.json`.
 
 ## Edit
 

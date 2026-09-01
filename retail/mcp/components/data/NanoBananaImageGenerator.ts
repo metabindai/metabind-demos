@@ -2,10 +2,9 @@
  * Generates an image via Google's Gemini "nano banana" image models using a text
  * prompt and optional reference images.
  *
- * Mirrors the open_aiimage_generator tool's input/output contract so it is a
- * drop-in backend for the same UI tools, but calls the Gemini Interactions API
+ * Calls the Gemini Interactions API
  * (https://generativelanguage.googleapis.com/v1beta/interactions) with the fast
- * gemini-3.1-flash-lite-image model instead of OpenAI.
+ * gemini-3.1-flash-lite-image model.
  *
  * Reference images are passed by URL (the Interactions API resolves public URLs
  * directly, no base64 upload needed).

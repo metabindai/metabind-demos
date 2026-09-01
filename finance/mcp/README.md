@@ -32,6 +32,15 @@ account balances summing to net worth, savings tracking net-worth growth,
 category totals matching the transaction list. Run both before pushing a change
 to any data component.
 
+## Requirements
+
+The `metabind` CLI, **0.9.0 or newer**:
+
+```sh
+brew install metabindai/tap/metabind
+metabind --version
+```
+
 ## Install into your organization
 
 ```sh
@@ -51,15 +60,22 @@ Pass `--org` and `--project` explicitly on the first sync of a fresh checkout �
 there is no baseline to read them from until one exists.
 
 `install` creates components and tools only — it doesn't upload assets or
-apply the project settings in `metabind.jsonc`. The MCP icon is deliberately not
-checked in: it is a CDN URL stamped with the org, project and asset ids that own
-it, so it means nothing in another project. Upload the app icon into your own
-project and point both settings at the URL you get back:
+apply the project settings in `metabind.jsonc`. No icon *URL* is checked in: a
+CDN address is stamped with the org, project and asset ids that own it, so it
+means nothing in another project.
+
+The icon image itself ships in `assets/files/`, synced down from the project —
+it is not read out of the iOS app. Upload it into your own project and point
+both settings at the URL you get back:
 
 ```sh
-metabind asset upload ../apple/AppIcon.xcassets/AppIcon.appiconset/finance-icon-2.png
+metabind asset upload assets/files/project-thumbnail.png
 metabind project update <projectId> --data '{"settings":{"thumbnailUrl":"<cdnUrl>","mcp":{"icons":[{"src":"<cdnUrl>","sizes":["1024x1024"],"mimeType":"image/png"}]}}}'
 ```
+
+Assets are pull-only: they are edited in the Studio, `metabind pull --with-assets`
+brings the binaries down into `assets/files/`, and `push` discards any edit to
+`assets/assets.json`.
 
 Pass `--org` and `--project` explicitly on every mutating command; without
 them the CLI targets whatever project `metabind use` last persisted.

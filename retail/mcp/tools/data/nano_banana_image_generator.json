@@ -1,7 +1,7 @@
 {
   "$schema": "../../.metabind/sdk/schemas/data-tool.schema.json",
   "description": "",
-  "component": "Nano Banana Image Generator",
+  "component": "NanoBananaImageGenerator",
   "allowedDomains": [
     "generativelanguage.googleapis.com"
   ],

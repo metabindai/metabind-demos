@@ -3,8 +3,7 @@
 build/
 DerivedData/
 .swiftpm/
-*.xcodeproj/xcuserdata/
-*.xcodeproj/project.xcworkspace/xcuserdata/
+**/xcuserdata/
 .claude/
 *.env
 **/Config/Local.xcconfig

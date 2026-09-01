@@ -19,6 +19,27 @@ as `Samples/` inside each SDK repository and reference the SDK by local path.
 | [finance](finance) | Personal-finance assistant with purpose-built answer surfaces instead of a chat transcript |
 | [retail](retail) | Furniture-store shopping assistant where the conversation itself is the product |
 
+## Starting with an agent
+
+These demos are meant to be driven by a coding agent. Give yours the CLI's shape
+first:
+
+```sh
+brew install metabindai/tap/metabind    # 0.9.0+
+metabind auth login
+metabind skill install                  # autodetects claude-code, codex, cursor
+```
+
+Then point it at a demo:
+
+> Read `CLAUDE.md` and `finance/mcp/README.md`, then install the Finance MCP
+> project into my Metabind organization and publish it. Show me the org and
+> project ids when you're done so I can configure the clients.
+
+Swap in `retail/` for the Retail demo. Each `<demo>/mcp/README.md` is written to
+be read start-to-finish before anything is run — Retail in particular needs
+secrets bound and reads a shared public catalogue.
+
 ## SDKs
 
 - [metabind-apple](https://github.com/metabindai/metabind-apple) — Swift SDK (`MetabindContent`, `MCPAppsHost`, `MetabindAI`)
