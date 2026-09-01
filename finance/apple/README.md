@@ -1,21 +1,24 @@
-# Metabind Finance Demo (Apple)
+# Metabind Finance demo (Apple)
 
 A configurable SwiftUI reference app built on
-[`MetabindAssistant`](https://github.com/metabindai/metabind-apple), Metabind's governed conversational AI
-runtime.
+[`MetabindAI`](https://github.com/metabindai/metabind-apple), Metabind's
+governed conversational AI runtime.
 
 The app asks one question on launch and uses the rendered MCP result as its
 home screen. Later questions come from the pill rail at the bottom and open in
 a sheet. There is no transcript and no navigation stack: assistant turns are
-routed to purpose-built surfaces instead of a message list.
+routed to purpose-built surfaces instead of a message list. That makes it the
+counterpart to [the Retail demo](../../retail/apple), where the transcript
+*is* the product. Same SDK, opposite shape — read both before deciding which
+one your product is.
 
 ## Data and backend
 
 The Finance MCP project lives alongside this client in [`../mcp`](../mcp).
-Before running the app, install it into your own Metabind organization
-(`metabind install --dir ../mcp --yes`, see that directory's README) and
-configure this client with that organization's stable internal ID and the
-installed project's ID.
+Before running the app, install it into your own Metabind organization —
+[Part 1 of the demo tutorial](../README.md#part-1--install-the-mcp-project)
+walks through it — and configure this client with that organization's stable
+internal ID and the installed project's ID.
 
 The supplied Finance MCP project uses synthetic financial data, such as sample
 transactions, spending categories, balances, and net-worth history. The app
@@ -35,40 +38,40 @@ MCP tools rather than inventing financial records.
 
 The Metabind Agent proxy holds the upstream model-provider credentials and runs
 the tool-use loop. The app never needs an Anthropic or other LLM provider key.
-One Metabind API key authenticates both the agent proxy and MCP server.
+One Metabind API key authenticates both the agent proxy and the MCP server.
 
 ## Requirements
 
 - iOS 17+
 - Xcode 26+
-- A Finance MCP project cloned into your own Metabind organization
+- A Finance MCP project installed into your own Metabind organization
 - A Metabind API key authorized for that organization and project
 
 ## Configure a local build
 
-Copy the public template to the ignored local configuration file:
+1. Copy the public template to the ignored local configuration file:
 
-```sh
-cp Config/Local.xcconfig.example Config/Local.xcconfig
-```
+   ```sh
+   cp Config/Local.xcconfig.example Config/Local.xcconfig
+   ```
 
-Fill in the values:
+2. Fill in the values:
 
-```xcconfig
-FINANCE_DEMO_BUNDLE_ID = com.yourcompany.MetabindFinanceDemo
-FINANCE_DEMO_ORG_ID = your_stable_internal_org_id
-FINANCE_DEMO_PROJECT_ID = your_project_id
-FINANCE_DEMO_API_KEY =
-DEVELOPMENT_TEAM = YOUR_TEAM_ID
-```
+   ```xcconfig
+   FINANCE_DEMO_BUNDLE_ID = com.yourcompany.MetabindFinanceDemo
+   FINANCE_DEMO_ORG_ID = your_stable_internal_org_id
+   FINANCE_DEMO_PROJECT_ID = your_project_id
+   FINANCE_DEMO_API_KEY =
+   DEVELOPMENT_TEAM = YOUR_TEAM_ID
+   ```
 
-- `FINANCE_DEMO_ORG_ID` must be the stable internal ID, not an organization
-  slug.
-- `FINANCE_DEMO_API_KEY` is optional for local development. Leave it empty to
-  enter the key on first launch. Set it only for a controlled demo build that
-  should start without setup.
-- `FINANCE_DEMO_BUNDLE_ID` and `DEVELOPMENT_TEAM` are required for a signed
-  device or distribution build. The public defaults remain generic.
+   - `FINANCE_DEMO_ORG_ID` must be the stable internal ID, not an organization
+     slug.
+   - `FINANCE_DEMO_API_KEY` is optional for local development. Leave it empty
+     to enter the key on first launch. Set it only for a controlled demo build
+     that should start without setup.
+   - `FINANCE_DEMO_BUNDLE_ID` and `DEVELOPMENT_TEAM` are required for a signed
+     device or distribution build. The public defaults remain generic.
 
 `Config/Local.xcconfig` is gitignored. Do not commit it.
 
@@ -102,29 +105,6 @@ identifier. Keychain items generally survive app deletion. Use
 **More (...) > Reset API Key** to remove the stored key. A stored key takes
 precedence over a newly configured key, so reset it after rotating credentials.
 
-## Xcode Cloud and TestFlight
-
-The checked-in
-[`ci_scripts/ci_post_clone.sh`](ci_scripts/ci_post_clone.sh) generates the
-gitignored `Config/Local.xcconfig` on the cloud worker. Configure these workflow
-environment variables:
-
-| Variable | Purpose |
-|---|---|
-| `FINANCE_DEMO_BUNDLE_ID` | Bundle ID registered in Apple Developer and App Store Connect |
-| `FINANCE_DEMO_ORG_ID` | Stable internal Metabind organization ID |
-| `FINANCE_DEMO_PROJECT_ID` | Finance MCP project ID |
-| `FINANCE_DEMO_API_KEY` | Restricted demo API key |
-| `DEVELOPMENT_TEAM` | Apple Developer team ID |
-
-Mark all private values as **Secret** in Xcode Cloud. The script intentionally
-fails early if any required variable is missing rather than producing a
-misconfigured TestFlight build.
-
-The project-level `Package.resolved` is checked in because Xcode Cloud archives
-with automatic package resolution disabled. Keep it updated when package
-dependencies change.
-
 ## How it works
 
 The integration lives in
@@ -140,7 +120,7 @@ let provider = MetabindAgentProvider(
 
 assistant = MetabindAssistant(
     serverURL: mcpServerURL,
-    serverHeaders: ["authorization": "******"],
+    serverHeaders: ["authorization": "Bearer \(metabindApiKey)"],
     provider: provider,
     configuration: .init(prefetchUIResources: true)
 )
@@ -167,13 +147,40 @@ A custom surface must also:
   before presenting it.
 - Inject `assistant.hostBridge` above any sheet that contains MCP App content.
 
+## Xcode Cloud and TestFlight
+
+The checked-in
+[`ci_scripts/ci_post_clone.sh`](ci_scripts/ci_post_clone.sh) generates the
+gitignored `Config/Local.xcconfig` on the cloud worker. Configure these workflow
+environment variables:
+
+| Variable | Purpose |
+|---|---|
+| `FINANCE_DEMO_BUNDLE_ID` | Bundle ID registered in Apple Developer and App Store Connect |
+| `FINANCE_DEMO_ORG_ID` | Stable internal Metabind organization ID |
+| `FINANCE_DEMO_PROJECT_ID` | Finance MCP project ID |
+| `FINANCE_DEMO_API_KEY` | Restricted demo API key |
+| `DEVELOPMENT_TEAM` | Apple Developer team ID |
+
+Mark all private values as **Secret** in Xcode Cloud. The script intentionally
+fails early if any required variable is missing rather than producing a
+misconfigured TestFlight build.
+
+The project-level `Package.resolved` is checked in because Xcode Cloud archives
+with automatic package resolution disabled. Keep it updated when package
+dependencies change.
+
 ## Where to next
 
-- [Metabind for Apple](https://github.com/metabindai/metabind-apple) - SDK installation, API reference, logging,
-  BYOK setup, and lower-level `MCPAppsHost` building blocks.
-- [AssistantDemo](https://github.com/metabindai/metabind-apple/tree/main/Samples/MetabindAI/AssistantDemo) - the same runtime behind the drop-in
-  `MetabindAssistantView` conversational surface.
-- [Metabind](https://metabind.ai) - create and manage MCP Apps.
+- [`../mcp`](../mcp) — the Finance MCP project this client talks to.
+- [`../android`](../android) — the same demo on Android.
+- [Metabind for Apple](https://github.com/metabindai/metabind-apple) — SDK
+  installation, API reference, logging, BYOK setup, and lower-level
+  `MCPAppsHost` building blocks.
+- [AssistantDemo](https://github.com/metabindai/metabind-apple/tree/main/Samples/MetabindAI/AssistantDemo)
+  — the same runtime behind the drop-in `MetabindAssistantView` conversational
+  surface.
+- [Metabind](https://metabind.ai) — create and manage MCP Apps.
 
 ## License
 

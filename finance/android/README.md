@@ -1,4 +1,4 @@
-# Metabind Finance Demo (Android)
+# Metabind Finance demo (Android)
 
 A configurable Jetpack Compose reference app built on
 [`metabindai-android`](https://github.com/metabindai/metabind-android), Metabind's
@@ -13,8 +13,9 @@ purpose-built surfaces instead of a message list.
 ## Data and backend
 
 The Finance MCP project lives alongside this client in [`../mcp`](../mcp). Before
-running the app, install it into your own Metabind organization (see that
-directory's README) and configure this client with that organization's stable
+running the app, install it into your own Metabind organization —
+[Part 1 of the demo tutorial](../README.md#part-1--install-the-mcp-project)
+walks through it — and configure this client with that organization's stable
 internal ID and the installed project's ID.
 
 The supplied Finance MCP project uses synthetic financial data, such as sample
@@ -52,27 +53,29 @@ Metabind API key authenticates both the agent proxy and the MCP server.
 
 ## Configure a local build
 
-Copy the public template to the ignored local configuration file:
+1. Copy the public template to the ignored local configuration file:
 
-```sh
-cp local.properties.example local.properties
-```
+   ```sh
+   cp local.properties.example local.properties
+   ```
 
-Fill in the values:
+2. Fill in the values:
 
-```properties
-sdk.dir=/Users/you/Library/Android/sdk
+   ```properties
+   sdk.dir=/Users/you/Library/Android/sdk
 
-FINANCE_DEMO_ORG_ID=your_stable_internal_org_id
-FINANCE_DEMO_PROJECT_ID=your_project_id
-FINANCE_DEMO_API_KEY=
-```
+   FINANCE_DEMO_ORG_ID=your_stable_internal_org_id
+   FINANCE_DEMO_PROJECT_ID=your_project_id
+   FINANCE_DEMO_API_KEY=
+   ```
 
-- `FINANCE_DEMO_ORG_ID` must be the stable internal ID, not an organization slug.
-- `FINANCE_DEMO_API_KEY` is optional. Leave it empty to enter the key on first
-  launch. Set it only for a controlled demo build that should start without setup.
-- Every value can also come from an environment variable of the same name, which is
-  what CI should use.
+   - `FINANCE_DEMO_ORG_ID` must be the stable internal ID, not an organization
+     slug.
+   - `FINANCE_DEMO_API_KEY` is optional. Leave it empty to enter the key on first
+     launch. Set it only for a controlled demo build that should start without
+     setup.
+   - Every value can also come from an environment variable of the same name,
+     which is what CI should use.
 
 `local.properties` is gitignored. Do not commit it.
 
