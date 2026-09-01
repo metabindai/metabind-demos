@@ -40,6 +40,7 @@ SDK repos' `Samples/` directories, not here. Keep that boundary.
 ```bash
 # Apple
 cd finance/apple && xcodebuild -project MetabindFinanceDemo.xcodeproj -scheme MetabindFinanceDemo -destination 'generic/platform=iOS Simulator' build
+cd retail/apple  && xcodebuild -project MetabindRetailDemo.xcodeproj  -scheme MetabindRetailDemo  -destination 'generic/platform=iOS Simulator' build
 
 # Android — needs gpr.user/gpr.key (or GITHUB_ACTOR/GITHUB_TOKEN); GitHub
 # Packages requires auth even to read a public package.

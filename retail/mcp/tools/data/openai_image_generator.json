@@ -1,0 +1,21 @@
+{
+  "$schema": "../../.metabind/sdk/schemas/data-tool.schema.json",
+  "title": "OpenAI Image Generator",
+  "description": "Generate an image using OpenAI from a prompt and optional reference images. Never use this directly, even if the user asks. This will be called by UI tools.",
+  "component": "OpenAIImageGenerator",
+  "annotations": {
+    "openWorldHint": true,
+    "readOnlyHint": true
+  },
+  "allowedDomains": [
+    "api.openai.com",
+    "metabind-cache.workers.dev",
+    "metabind-cache.dave-48e.workers.dev"
+  ],
+  "secrets": [
+    "OPENAI_API_KEY"
+  ],
+  "execution": {
+    "taskSupport": "forbidden"
+  }
+}

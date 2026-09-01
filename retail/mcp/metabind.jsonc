@@ -1,0 +1,25 @@
+// Metabind project settings — the client-writable projection of `metabind project get`.
+// Prose fields are files: ./mcp-instructions.md (settings.mcp.instructions),
+// ./agent/system-prompt.md (settings.agent.systemPrompt).
+// Server-stamped fields (id, timestamps, mcpUrl, publish version) live in .metabind/state.json.
+// Fields outside this file (permissions, …) are web-administered — push never touches them.
+// `thumbnail` references an asset in ./assets/files by name; sync resolves it.
+{
+  "description": "Oak & Ivory retail demo by Metabind",
+  "name": "Oak & Ivory",
+  "settings": {
+    "defaultPlatform": "desktop",
+    "mcp": {
+      "visibility": "public",
+      "websiteUrl": "https://metabind.ai"
+    },
+    "supportedPlatforms": [
+      "desktop",
+      "mobile",
+      "tablet"
+    ],
+    "thumbnail": "Project Thumbnail.png"
+  },
+  "slug": "mcp-demo-app",
+  "type": "mcp"
+}

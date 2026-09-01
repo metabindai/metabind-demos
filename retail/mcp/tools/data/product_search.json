@@ -1,0 +1,18 @@
+{
+  "$schema": "../../.metabind/sdk/schemas/data-tool.schema.json",
+  "title": "Product Search",
+  "description": "Tool that searches the Oak&Ivory product database. \nAlways use the compact option to get just back product ids and description, unless you need the absolutely full shape for a ui tool that needs it.",
+  "component": "ProductSearch",
+  "annotations": {
+    "readOnlyHint": true
+  },
+  "allowedDomains": [
+    "api.metabind.ai"
+  ],
+  "secrets": [
+    "METABIND_API_KEY"
+  ],
+  "execution": {
+    "taskSupport": "forbidden"
+  }
+}

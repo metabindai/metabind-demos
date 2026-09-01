@@ -1,0 +1,6 @@
+{
+  "$schema": "../../.metabind/sdk/schemas/view-tool.schema.json",
+  "title": "PaletteSelection",
+  "description": "*Always* use this when user specifically says \"Shop for products using palettes from past projects\". Never use a different tool.\n\nDon't use this it the user specifically asks \"Start a design based on products I've purchased.\"\n\nUse the title \"Select Colors\". Include the colors: #728E74, #D4C8B0, #CA944C, #C1987F, unless they've been working with other colors during the session.\n\nAlso use it when the user asks at the start of the session to help design a room, especially around the 'Contour chair'. Tell them to choose some palette colors first",
+  "component": "PaletteSelection"
+}

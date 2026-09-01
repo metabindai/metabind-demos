@@ -1,0 +1,18 @@
+// Copy this file to Local.xcconfig (same directory) and fill in your own
+// values for a local device or TestFlight build. Local.xcconfig is
+// gitignored — it never gets committed or published, so this is the safe
+// place for real signing and project identity values.
+//
+// RETAIL_DEMO_API_KEY is optional for a local build. If set, it is compiled
+// into Info.plist and is recoverable from the built app; use only a restricted,
+// revocable demo key. Leave it empty to enter a key at runtime instead.
+RETAIL_DEMO_BUNDLE_ID = com.yourcompany.MetabindRetailDemo
+RETAIL_DEMO_ORG_ID = your_org_id
+RETAIL_DEMO_PROJECT_ID = your_project_id
+RETAIL_DEMO_API_KEY = your_api_key
+DEVELOPMENT_TEAM = YOUR_TEAM_ID
+
+// Optional — the Metabind-managed starter screen. All three or none.
+RETAIL_DEMO_CONTENT_PROJECT_ID = your_content_project_id
+RETAIL_DEMO_CONTENT_API_KEY = your_content_api_key
+RETAIL_DEMO_STARTER_CONTENT_ID = cont_0000000000000000

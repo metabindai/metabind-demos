@@ -17,6 +17,7 @@ as `Samples/` inside each SDK repository and reference the SDK by local path.
 | Demo | What it shows |
 |---|---|
 | [finance](finance) | Personal-finance assistant with purpose-built answer surfaces instead of a chat transcript |
+| [retail](retail) | Furniture-store shopping assistant where the conversation itself is the product |
 
 ## SDKs
 

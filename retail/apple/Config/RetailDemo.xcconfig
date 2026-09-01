@@ -1,0 +1,27 @@
+// Shared base config — committed and public. Do not put a real team ID,
+// distribution bundle identifier, org ID, project ID, API key, or anything
+// else identifying to a private account in this file.
+//
+// For a local device or TestFlight build, copy Local.xcconfig.example to
+// Local.xcconfig (same directory) and fill in your own values. Local.xcconfig
+// is gitignored, so it's picked up here via an optional include and never
+// committed or published. Without it, the project builds exactly as it does
+// for anyone who clones the demo: unsigned-for-device, generic bundle id,
+// placeholder identifiers, and no preconfigured API key.
+//
+// For Xcode Cloud, the ci_post_clone.sh script writes a Local.xcconfig from
+// environment variables — see that script for the required variable names.
+RETAIL_DEMO_BUNDLE_ID = com.example.MetabindRetailDemo
+RETAIL_DEMO_ORG_ID = YOUR_ORG_ID
+RETAIL_DEMO_PROJECT_ID = YOUR_PROJECT_ID
+RETAIL_DEMO_API_KEY =
+DEVELOPMENT_TEAM =
+
+// Optional. The starter screen is a Metabind-managed content component; set
+// all three to render it. Leave them empty and the app falls back to the
+// built-in starter prompts, so a fresh clone still runs.
+RETAIL_DEMO_CONTENT_PROJECT_ID =
+RETAIL_DEMO_CONTENT_API_KEY =
+RETAIL_DEMO_STARTER_CONTENT_ID =
+
+#include? "Local.xcconfig"

@@ -1,0 +1,18 @@
+{
+  "$schema": "../../.metabind/sdk/schemas/data-tool.schema.json",
+  "title": "InspirationSearch",
+  "description": "Search Reference-tagged assets via the Metabind Assets API",
+  "component": "InspirationSearch",
+  "annotations": {
+    "readOnlyHint": true
+  },
+  "allowedDomains": [
+    "https://api.metabind.ai"
+  ],
+  "secrets": [
+    "METABIND_API_KEY"
+  ],
+  "execution": {
+    "taskSupport": "forbidden"
+  }
+}
