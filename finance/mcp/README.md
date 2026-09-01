@@ -10,8 +10,6 @@ components/view/*.ts     BindJS UI tools rendered natively in the apps
 tools/<kind>/*.json      tool definitions (name, description, annotations)
 metabind.jsonc           project settings; prose in mcp-instructions.md
 agent/                   hosted-chat agent settings; prompt in system-prompt.md
-scripts/                 the shared synthetic feed and the checks that keep
-                         every card reconciled against it
 assets/files/            the project thumbnail, synced down from the project
 .metabind/sdk/           generated typings for authoring components
 ```
@@ -27,13 +25,11 @@ external host (`metabind inspect --dir .` confirms).
 
 ## How the data stays consistent
 
-Every card reads one feed, so any two cards showing the same figure agree. That
-is enforced, not assumed: `scripts/shared-feed.js` is the single source, and
-`node scripts/sync-shared-feed.mjs --check` fails if a component's injected copy
-has drifted. `node scripts/reconcile.mjs` asserts the cross-card invariants —
-account balances summing to net worth, savings tracking net-worth growth,
-category totals matching the transaction list. Run both before pushing a change
-to any data component.
+Every card reads the same synthetic feed, so any two cards showing the same
+figure agree: account balances sum to net worth, savings track net-worth growth,
+and category totals match the transaction list. The feed is carried inline in
+each data component — they are self-contained and finished. Build on top of them
+rather than regenerating them.
 
 ## Install
 
@@ -54,9 +50,6 @@ installing and signing in to the CLI itself, see
 Edit the source under `components/`, then:
 
 ```sh
-node scripts/sync-shared-feed.mjs      # after editing scripts/shared-feed.js
-node scripts/sync-shared-feed.mjs --check
-node scripts/reconcile.mjs
 metabind validate component components/view/TrendCard.ts
 metabind push        # from a checkout pulled from your own project
 metabind publish

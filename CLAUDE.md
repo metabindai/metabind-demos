@@ -49,6 +49,4 @@ cd retail/apple  && xcodebuild -project MetabindRetailDemo.xcodeproj  -scheme Me
 # Packages requires auth even to read a public package.
 cd finance/android && ./gradlew :app:assembleDebug
 
-# MCP — after touching any data component
-cd finance/mcp && node scripts/sync-shared-feed.mjs --check && node scripts/reconcile.mjs
 ```
