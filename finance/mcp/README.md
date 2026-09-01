@@ -12,8 +12,14 @@ metabind.jsonc           project settings; prose in mcp-instructions.md
 agent/                   hosted-chat agent settings; prompt in system-prompt.md
 scripts/                 the shared synthetic feed and the checks that keep
                          every card reconciled against it
-.metabind/               ids, content hashes, generated typings
+.metabind/sdk/           generated typings for authoring components
 ```
+
+This tree is project **source**, not a checkout of our project. Nothing here
+names an organization, a project, or an entity id: `.metabind/state.json`,
+`metabind.resolved` and `.metabind/secrets.json` are per-checkout sync state and
+are gitignored, so your first sync establishes a baseline against *your* project
+rather than inheriting ours.
 
 All financial data is synthetic. Nothing here reads a secret or calls an
 external host (`metabind inspect --dir .` confirms).
@@ -36,13 +42,19 @@ metabind agent set --provider anthropic --key ...   # hosted chat needs an LLM k
 metabind publish
 ```
 
-`install` mints fresh ids, so the tree's `.metabind/state.json` never
-addresses anything in your org. Use the printed org and project IDs to
-configure the clients (`apple/Config/Local.xcconfig`).
+`install` mints fresh ids and writes the sync baseline
+(`.metabind/state.json`) for the project it just created. Use the printed org
+and project IDs to configure the clients (`apple/Config/Local.xcconfig`,
+`android/local.properties`).
+
+Pass `--org` and `--project` explicitly on the first sync of a fresh checkout —
+there is no baseline to read them from until one exists.
 
 `install` creates components and tools only — it doesn't upload assets or
-apply the project settings in `metabind.jsonc` (thumbnail, MCP icon). To carry
-the icon over, upload the app icon and point both settings at it:
+apply the project settings in `metabind.jsonc`. The MCP icon is deliberately not
+checked in: it is a CDN URL stamped with the org, project and asset ids that own
+it, so it means nothing in another project. Upload the app icon into your own
+project and point both settings at the URL you get back:
 
 ```sh
 metabind asset upload ../apple/AppIcon.xcassets/AppIcon.appiconset/finance-icon-2.png
