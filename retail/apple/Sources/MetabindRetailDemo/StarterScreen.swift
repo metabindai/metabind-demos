@@ -1,58 +1,91 @@
 import SwiftUI
-import MetabindContent
 
-/// The empty state, before the first question.
+/// The empty state, before the first question: a greeting and three bento
+/// cards, each of which sends a prompt when tapped.
 ///
-/// When a content project is configured this is a Metabind-managed component —
-/// which is the interesting version, because it means merchandising can change
-/// the opening screen without shipping a release. The component reports taps
-/// back through `onMetabindAction`, carrying the prompt to send.
-///
-/// Without one it falls back to the built-in prompts below, so a fresh clone
-/// still runs. The fallback is deliberately plain: it is a stand-in for the
-/// managed screen, not a second design to maintain.
+/// The prompt is the card's headline prompt followed by the values of its
+/// tiles — hex codes for colours, titles for images — so the model sees what
+/// the shopper was looking at, not just the card's wording. Edit `cards` to
+/// change the opening screen.
 struct StarterScreen: View {
     let onSend: (String) -> Void
 
     var body: some View {
-        if let content = DemoConfig.content {
-            MetabindView(contentId: content.starterContentId)
-                .onMetabindAction { action in
-                    guard action.name == "selectedStarter",
-                          let prompt = action.props["prompt"] as? String else { return }
-                    onSend(prompt)
-                }
-        } else {
-            fallback
-        }
-    }
+        VStack(spacing: 12) {
+            VStack(alignment: .leading, spacing: 4) {
+                Text("Welcome back, Joe")
+                    .font(.title3.weight(.semibold))
+                    .foregroundStyle(OakTheme.text)
+                    .frame(maxWidth: .infinity, alignment: .leading)
+                    .padding(.top, 16)
+                Text("A few thoughtful ways to continue shaping your space.")
+                    .font(.body)
+                    .foregroundStyle(OakTheme.text)
+                    .frame(maxWidth: .infinity, alignment: .leading)
+                    .padding(.bottom, 8)
+            }
 
-    private var fallback: some View {
-        VStack(spacing: 14) {
-            ForEach(Self.starters) { starter in
-                StarterChip(
-                    text: starter.prompt,
-                    isPrimary: starter.isPrimary,
-                    onTap: { onSend(starter.prompt) }
+            ForEach(Self.cards) { card in
+                BentoCard(
+                    title: card.title,
+                    description: card.description,
+                    tiles: card.tiles,
+                    showTileTitles: card.showTileTitles,
+                    onTap: { onSend(card.fullPrompt) }
                 )
             }
         }
-        .padding(.horizontal, OakTheme.pageMargin)
-        .padding(.top, 12)
+        .padding(.horizontal, Self.horizontalPadding)
     }
 
-    struct Starter: Identifiable {
+    private static let horizontalPadding: CGFloat = 24
+
+    struct Card: Identifiable {
+        let title: String
+        let description: String
         let prompt: String
-        let isPrimary: Bool
-        var id: String { prompt }
+        let tiles: [BentoTile]
+        var showTileTitles: Bool = true
+        var id: String { title }
+
+        var fullPrompt: String {
+            let values = tiles.map(\.promptValue).filter { !$0.isEmpty }
+            guard !values.isEmpty else { return prompt }
+            return "\(prompt) \(values.joined(separator: ","))"
+        }
     }
 
-    static let starters: [Starter] = [
-        Starter(prompt: "Contemporary lounge chair with a curved bent-ply natural birch frame", isPrimary: true),
-        Starter(prompt: "Show me inspirations for a living room", isPrimary: false),
-        Starter(prompt: "Help me put together a lounge room around the Contour Chair", isPrimary: false),
-        Starter(prompt: "Compare the coffee tables in your range", isPrimary: false),
-        Starter(prompt: "Tell me everything about the Contour Chair", isPrimary: false),
+    static let cards: [Card] = [
+        Card(
+            title: "Continue exploring palettes you love",
+            description: "Revisit tones and combinations that fit your style.",
+            prompt: "Shop for products using palettes from past projects",
+            tiles: [
+                .color(hex: "#4a5240"),
+                .color(hex: "#c9a45a"),
+                .color(hex: "#e8dcc8"),
+                .color(hex: "#444444"),
+            ]
+        ),
+        Card(
+            title: "Pick up where you left off",
+            description: "Continue shopping the pieces you\u{2019}ve been considering.",
+            prompt: "Start a design based on products I've purchased",
+            tiles: [
+                .image(name: "starter-pebble-coffee-table", title: "Pebble Round Coffee Table"),
+                .image(name: "starter-lumora-pendant-light", title: "Lumora Pendant Light"),
+                .image(name: "starter-viksund-teak-credenza", title: "Viksund Teak Credenza"),
+            ],
+            showTileTitles: false
+        ),
+        Card(
+            title: "A space imagined just for you",
+            description: "Explore a design tailored to your style and home",
+            prompt: "Shop for products using themes I like",
+            tiles: [
+                .image(name: "starter-contemporary-lounge", title: ""),
+            ]
+        ),
     ]
 }
 

@@ -5,8 +5,8 @@ import Foundation
 /// Cloud, from the workflow environment via `ci_scripts/ci_post_clone.sh`).
 ///
 /// Nothing identifying is compiled in. A clean clone builds and runs with the
-/// placeholders in `Config/RetailDemo.xcconfig`, asks for an API key on
-/// launch, and falls back to the built-in starter prompts.
+/// placeholders in `Config/RetailDemo.xcconfig` and asks for an API key on
+/// launch.
 enum DemoConfig {
     private static func string(_ key: String) -> String {
         (Bundle.main.infoDictionary?[key] as? String ?? "")
@@ -37,28 +37,4 @@ enum DemoConfig {
         guard !orgId.isEmpty, !projectId.isEmpty else { return nil }
         return URL(string: "https://mcp.metabind.ai/\(orgId)/projects/\(projectId)")
     }
-
-    // MARK: - Content (optional)
-
-    /// The starter screen is a Metabind-managed content component rather than
-    /// hard-coded UI, which is the point of showing it — merchandising can
-    /// change the opening screen without a release. It needs its own content
-    /// project, so it is optional: `StarterScreen` falls back to the built-in
-    /// prompts when any part of this is missing.
-    struct Content {
-        let projectId: String
-        let apiKey: String
-        let starterContentId: String
-    }
-
-    static let content: Content? = {
-        guard let projectId = configured("RetailDemoContentProjectId"),
-              let apiKey = configured("RetailDemoContentAPIKey"),
-              let starterContentId = configured("RetailDemoStarterContentId")
-        else { return nil }
-        return Content(projectId: projectId, apiKey: apiKey, starterContentId: starterContentId)
-    }()
-
-    static let contentAPIURL = URL(string: "https://api.metabind.ai/graphql")!
-    static let contentWebSocketURL = URL(string: "wss://ws-api.metabind.ai")!
 }

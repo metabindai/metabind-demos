@@ -12,14 +12,13 @@
 		B0000000000000000000000003 /* MessageRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0000000000000000000000003 /* MessageRow.swift */; };
 		B0000000000000000000000004 /* MetabindRetailDemoApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0000000000000000000000004 /* MetabindRetailDemoApp.swift */; };
 		B0000000000000000000000005 /* RootView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0000000000000000000000005 /* RootView.swift */; };
-		B0000000000000000000000006 /* StarterChip.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0000000000000000000000006 /* StarterChip.swift */; };
+		B0000000000000000000000006 /* BentoCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0000000000000000000000006 /* BentoCard.swift */; };
 		B0000000000000000000000007 /* StarterScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0000000000000000000000007 /* StarterScreen.swift */; };
 		B0000000000000000000000008 /* SuggestionChips.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0000000000000000000000008 /* SuggestionChips.swift */; };
 		B0000000000000000000000009 /* SuggestionService.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0000000000000000000000009 /* SuggestionService.swift */; };
 		B000000000000000000000000A /* Theme.swift in Sources */ = {isa = PBXBuildFile; fileRef = A000000000000000000000000A /* Theme.swift */; };
 		C0000000000000000000A001 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A1000000000000000000A001 /* Assets.xcassets */; };
 		C0000000000000000000A002 /* MetabindAI in Frameworks */ = {isa = PBXBuildFile; productRef = D0000000000000000000A001 /* MetabindAI */; };
-		C0000000000000000000A003 /* MetabindContent in Frameworks */ = {isa = PBXBuildFile; productRef = D0000000000000000000A002 /* MetabindContent */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,7 +27,7 @@
 		A0000000000000000000000003 /* MessageRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageRow.swift; sourceTree = "<group>"; };
 		A0000000000000000000000004 /* MetabindRetailDemoApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MetabindRetailDemoApp.swift; sourceTree = "<group>"; };
 		A0000000000000000000000005 /* RootView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootView.swift; sourceTree = "<group>"; };
-		A0000000000000000000000006 /* StarterChip.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StarterChip.swift; sourceTree = "<group>"; };
+		A0000000000000000000000006 /* BentoCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BentoCard.swift; sourceTree = "<group>"; };
 		A0000000000000000000000007 /* StarterScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StarterScreen.swift; sourceTree = "<group>"; };
 		A0000000000000000000000008 /* SuggestionChips.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SuggestionChips.swift; sourceTree = "<group>"; };
 		A0000000000000000000000009 /* SuggestionService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SuggestionService.swift; sourceTree = "<group>"; };
@@ -47,7 +46,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				C0000000000000000000A002 /* MetabindAI in Frameworks */,
-				C0000000000000000000A003 /* MetabindContent in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -62,7 +60,7 @@
 				A0000000000000000000000003 /* MessageRow.swift */,
 				A0000000000000000000000004 /* MetabindRetailDemoApp.swift */,
 				A0000000000000000000000005 /* RootView.swift */,
-				A0000000000000000000000006 /* StarterChip.swift */,
+				A0000000000000000000000006 /* BentoCard.swift */,
 				A0000000000000000000000007 /* StarterScreen.swift */,
 				A0000000000000000000000008 /* SuggestionChips.swift */,
 				A0000000000000000000000009 /* SuggestionService.swift */,
@@ -134,7 +132,6 @@
 			name = MetabindRetailDemo;
 			packageProductDependencies = (
 				D0000000000000000000A001 /* MetabindAI */,
-				D0000000000000000000A002 /* MetabindContent */,
 			);
 			productName = MetabindRetailDemo;
 			productReference = A1000000000000000000A006 /* Oak&Ivory.app */;
@@ -192,7 +189,7 @@
 				B0000000000000000000000003 /* MessageRow.swift in Sources */,
 				B0000000000000000000000004 /* MetabindRetailDemoApp.swift in Sources */,
 				B0000000000000000000000005 /* RootView.swift in Sources */,
-				B0000000000000000000000006 /* StarterChip.swift in Sources */,
+				B0000000000000000000000006 /* BentoCard.swift in Sources */,
 				B0000000000000000000000007 /* StarterScreen.swift in Sources */,
 				B0000000000000000000000008 /* SuggestionChips.swift in Sources */,
 				B0000000000000000000000009 /* SuggestionService.swift in Sources */,
@@ -372,11 +369,6 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 6000000000000000000000A1 /* XCRemoteSwiftPackageReference "metabind-apple" */;
 			productName = MetabindAI;
-		};
-		D0000000000000000000A002 /* MetabindContent */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 6000000000000000000000A1 /* XCRemoteSwiftPackageReference "metabind-apple" */;
-			productName = MetabindContent;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};
