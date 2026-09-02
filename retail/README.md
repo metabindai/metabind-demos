@@ -44,6 +44,7 @@ Working through this README end to end, you get:
   room design, and image generation — installed as a project in your own
   Metabind organization.
 - The iOS app running against that project.
+- The Android app running against the same project.
 
 Oak&Ivory is a fictional store, but unlike Finance this project is not
 self-contained: its tools read a hosted, public demo catalogue and need
@@ -56,7 +57,7 @@ exactly what it reaches and how to point it at your own catalogue instead.
 | Directory | Contents |
 |---|---|
 | [`apple/`](apple) | iOS app on `MetabindAI` (`MetabindAssistant`), SDK pinned by release tag |
-| [`android/`](android) | Not yet available — the Oak&Ivory client exists for Apple only |
+| [`android/`](android) | Android app on `metabindai-android` (`MetabindAssistant`), SDK pinned in the version catalog |
 | [`mcp/`](mcp) | The Retail MCP project: BindJS components, tools, and the catalogue bindings |
 
 ## Before you start
@@ -71,9 +72,11 @@ exactly what it reaches and how to point it at your own catalogue instead.
   ```
 
 - An LLM provider API key (Anthropic, OpenAI, or Google). The Metabind Agent
-  proxy holds it server-side and runs the conversation with it — the app
-  never ships a provider key.
-- Xcode 26+ (the app targets iOS 17+).
+  proxy holds it server-side and runs the conversation with it — the apps
+  never ship a provider key.
+- For iOS: Xcode 26+ (the app targets iOS 17+).
+- For Android: Android Studio, JDK 17+, and GitHub Packages credentials —
+  GitHub requires authentication even to read a public package.
 - Optional: a [Gemini API key](https://ai.google.dev/) for image generation.
   It's a paid API — see the secrets step for what works without it.
 
@@ -197,6 +200,40 @@ Run these from this directory (`retail/`).
 For signing, Xcode Cloud, TestFlight, and how the integration works, see
 [the iOS app's README](apple/README.md).
 
+## Part 3 — run the Android app
+
+1. Give Gradle credentials for GitHub Packages, either as environment
+   variables (`GITHUB_ACTOR` / `GITHUB_TOKEN`) or in
+   `~/.gradle/gradle.properties`:
+
+   ```properties
+   gpr.user=your-github-username
+   gpr.key=your-github-token
+   ```
+
+2. Create the gitignored local configuration from its template, and fill in
+   the same ids from Part 1:
+
+   ```sh
+   cd android
+   cp local.properties.example local.properties
+   ```
+
+3. Build, install, and launch on a device or emulator (API 26+, with the
+   WebView JavaScript Sandbox available — BindJS runs component code in
+   `androidx.javascriptengine`):
+
+   ```sh
+   ./gradlew :app:installDebug
+   adb shell am start -n ai.metabind.retail.demo/.MainActivity
+   ```
+
+4. Enter your Metabind API key and tap **Start** — the same first-launch flow
+   as iOS.
+
+For the Compose architecture and the deliberate divergences from the iOS app,
+see [the Android app's README](android/README.md).
+
 ## Where to next
 
 - [Sell your own catalogue](mcp/README.md#it-is-not-self-contained) — replace
@@ -205,8 +242,9 @@ For signing, Xcode Cloud, TestFlight, and how the integration works, see
   validate, push, and publish.
 - [The Finance demo](../finance) — the same SDKs with the opposite shape: no
   transcript, purpose-built surfaces.
-- [Metabind for Apple](https://github.com/metabindai/metabind-apple) — SDK
-  installation and API reference.
+- [Metabind for Apple](https://github.com/metabindai/metabind-apple) and
+  [Metabind for Android](https://github.com/metabindai/metabind-android) —
+  SDK installation and API reference.
 - [docs.metabind.ai](https://docs.metabind.ai) — the full guides.
 
 ## License

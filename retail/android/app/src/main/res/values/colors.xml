@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Oak&Ivory palette, from the iOS app's Assets.xcassets colour sets. -->
+    <color name="oak_background">#FFF2EDDD</color>
+    <color name="oak_surface">#FFFFFFFF</color>
+    <color name="oak_text">#FF464646</color>
+    <color name="oak_accent">#FF007AFF</color>
+    <!-- App-icon ground, sampled from the iOS icon artwork. -->
+    <color name="ic_launcher_background">#FFF2F1EC</color>
+</resources>

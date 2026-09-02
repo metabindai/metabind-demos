@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Light only, like the iOS app (`.preferredColorScheme(.light)`). The window
+         background matches the Compose page colour so there is no flash on launch. -->
+    <style name="Theme.MetabindRetailDemo" parent="android:Theme.Material.Light.NoActionBar">
+        <item name="android:windowBackground">@color/oak_background</item>
+        <item name="android:windowLightStatusBar">true</item>
+        <item name="android:windowLightNavigationBar">true</item>
+    </style>
+</resources>

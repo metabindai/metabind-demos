@@ -1,0 +1,20 @@
+<resources>
+    <string name="app_name">Oak&amp;Ivory</string>
+    <string name="wordmark">Oak&amp;Ivory</string>
+
+    <string name="key_entry_title">Enter your Metabind API key</string>
+    <string name="key_entry_subtitle">Routed through the Metabind Agent proxy — no provider keys in the app.</string>
+    <string name="key_entry_placeholder">mb_…</string>
+    <string name="key_entry_start">Start</string>
+    <string name="key_entry_unconfigured">No org or project configured — copy local.properties.example to local.properties and fill it in.</string>
+
+    <string name="input_placeholder">Ask Anything…</string>
+    <string name="action_send">Send message</string>
+    <string name="action_stop">Stop response</string>
+    <string name="action_profile">Profile</string>
+    <string name="action_cart">Cart</string>
+    <string name="action_new_conversation">New conversation</string>
+    <string name="menu_reset_api_key">Reset API Key</string>
+    <string name="starter_hint">Send this prompt</string>
+    <string name="thinking">Thinking</string>
+</resources>
