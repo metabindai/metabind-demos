@@ -48,5 +48,6 @@ cd retail/apple  && xcodebuild -project MetabindRetailDemo.xcodeproj  -scheme Me
 # Android — needs gpr.user/gpr.key (or GITHUB_ACTOR/GITHUB_TOKEN); GitHub
 # Packages requires auth even to read a public package.
 cd finance/android && ./gradlew :app:assembleDebug
+cd retail/android  && ./gradlew :app:assembleDebug
 
 ```

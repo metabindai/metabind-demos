@@ -30,7 +30,7 @@ one your product is:
 | Demo | What it shows | Video |
 |---|---|---|
 | [finance](finance) | Personal-finance assistant with purpose-built answer surfaces instead of a chat transcript. iOS and Android. | [▶️ Watch](https://youtu.be/yc-FLvOt94E) |
-| [retail](retail) | Oak&Ivory, a furniture-store shopping assistant where the conversation itself is the product. iOS. | [▶️ Watch](https://youtu.be/9eI16TF2Ntc) |
+| [retail](retail) | Oak&Ivory, a furniture-store shopping assistant where the conversation itself is the product. iOS and Android. | [▶️ Watch](https://youtu.be/9eI16TF2Ntc) |
 
 Each demo is one folder holding every platform client and the MCP project it
 talks to:
