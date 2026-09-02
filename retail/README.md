@@ -194,11 +194,6 @@ Run these from this directory (`retail/`).
    starter prompt or ask about a chair, and watch the answer arrive as prose
    with product cards inline.
 
-The starter screen can also be served from Metabind-managed content, so
-merchandising can change the opening prompts without a release — see
-[the iOS app's README](apple/README.md#starter-screen). That's optional; a
-fresh clone runs with only the MCP project configured.
-
 For signing, Xcode Cloud, TestFlight, and how the integration works, see
 [the iOS app's README](apple/README.md).
 

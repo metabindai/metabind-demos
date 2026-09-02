@@ -81,26 +81,14 @@ One Metabind API key authenticates both the agent proxy and the MCP server.
 
 ## Starter screen
 
-The empty state — everything on screen before the first question — is a
-Metabind-managed content component rather than hard-coded UI. That is the point
-of it: merchandising can change the opening prompts, imagery and copy without
-shipping a release. The component reports taps back through `onMetabindAction`,
-carrying the prompt to send.
-
-It needs its own **content** project, separate from the MCP project, so it is
-optional:
-
-```xcconfig
-RETAIL_DEMO_CONTENT_PROJECT_ID = your_content_project_id
-RETAIL_DEMO_CONTENT_API_KEY = your_content_api_key
-RETAIL_DEMO_STARTER_CONTENT_ID = cont_0000000000000000
-```
-
-Set all three or none. Without them,
-[`StarterScreen`](Sources/MetabindRetailDemo/StarterScreen.swift) falls back to a
-built-in list of starter prompts, so a fresh clone runs with only the MCP project
-configured. The fallback is deliberately plain — it stands in for the managed
-screen rather than being a second design to maintain.
+The empty state — everything on screen before the first question — is plain
+SwiftUI in [`StarterScreen`](Sources/MetabindRetailDemo/StarterScreen.swift): a
+greeting and three [`BentoCard`](Sources/MetabindRetailDemo/BentoCard.swift)s,
+each a tappable card with a line of copy and a small grid of colour or image
+tiles. Tapping a card sends its prompt followed by the tile values — hex codes
+for colours, titles for images — so the model sees what the shopper was looking
+at. Edit the `cards` list to change the opening prompts, copy, or imagery; the
+images are bundled in `Resources/Assets.xcassets`.
 
 ## Run
 

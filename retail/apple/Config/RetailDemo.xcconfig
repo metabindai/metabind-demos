@@ -17,11 +17,4 @@ RETAIL_DEMO_PROJECT_ID = YOUR_PROJECT_ID
 RETAIL_DEMO_API_KEY =
 DEVELOPMENT_TEAM =
 
-// Optional. The starter screen is a Metabind-managed content component; set
-// all three to render it. Leave them empty and the app falls back to the
-// built-in starter prompts, so a fresh clone still runs.
-RETAIL_DEMO_CONTENT_PROJECT_ID =
-RETAIL_DEMO_CONTENT_API_KEY =
-RETAIL_DEMO_STARTER_CONTENT_ID =
-
 #include? "Local.xcconfig"

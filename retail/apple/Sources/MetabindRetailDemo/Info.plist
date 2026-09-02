@@ -22,16 +22,10 @@
 	<string>$(CURRENT_PROJECT_VERSION)</string>
 	<key>RetailDemoAPIKey</key>
 	<string>$(RETAIL_DEMO_API_KEY)</string>
-	<key>RetailDemoContentAPIKey</key>
-	<string>$(RETAIL_DEMO_CONTENT_API_KEY)</string>
-	<key>RetailDemoContentProjectId</key>
-	<string>$(RETAIL_DEMO_CONTENT_PROJECT_ID)</string>
 	<key>RetailDemoOrgId</key>
 	<string>$(RETAIL_DEMO_ORG_ID)</string>
 	<key>RetailDemoProjectId</key>
 	<string>$(RETAIL_DEMO_PROJECT_ID)</string>
-	<key>RetailDemoStarterContentId</key>
-	<string>$(RETAIL_DEMO_STARTER_CONTENT_ID)</string>
 	<key>ITSAppUsesNonExemptEncryption</key>
 	<false/>
 	<key>UIApplicationSceneManifest</key>
