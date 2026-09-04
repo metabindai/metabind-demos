@@ -148,7 +148,7 @@ Run these from this directory (`retail/`).
 8. Mint the API key the app signs in with:
 
    ```sh
-   metabind api-key create
+   metabind api-key create --name "Oak & Ivory"
    ```
 
    Copy the value now — it is shown once, at creation. One Metabind API key
