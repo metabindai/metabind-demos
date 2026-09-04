@@ -123,7 +123,7 @@ Run these from this directory (`finance/`).
 6. Mint the API key the apps sign in with:
 
    ```sh
-   metabind api-key create
+   metabind api-key create --name "Banking Assistant"
    ```
 
    Copy the value now — it is shown once, at creation. One Metabind API key
