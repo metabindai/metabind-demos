@@ -91,8 +91,15 @@ Run these from this directory (`retail/`).
    ```sh
    metabind auth login
    metabind org list
+   metabind use --clear
    metabind use --org <org-id>
    ```
+
+   `use --clear` matters if you have used the CLI before. `install` in
+   step 3 creates a project only when none is bound, and installs into the
+   bound one otherwise — after the Finance demo, for instance. Setting the org
+   alone does not release a project bound earlier; `metabind status` shows
+   the active scope.
 
 2. See what the tree declares before creating anything:
 
@@ -164,12 +171,24 @@ Run these from this directory (`retail/`).
    metabind asset upload mcp/assets/files/project-thumbnail.png
    metabind sync repair --out mcp --org <org-id> --project <project-id>
    metabind push --out mcp
+   metabind project get <project-id>
    metabind project update <project-id> \
      --data '{"settings":{"thumbnailUrl":"<url from asset upload>"}}'
    metabind publish
    ```
 
    `push` rewrites the tool drafts, so publish once more to release them.
+
+   The `project get` is not decoration. `project update` refuses to write an
+   entity the CLI has not read recently, so that it can tell the project
+   hasn't moved underneath you:
+
+   ```
+   CONFLICT: Refusing project update <project-id>: no recent read recorded.
+   ```
+
+   A project you just installed has never been read, so the first update
+   trips this without it.
 
 > [!NOTE]
 > Configure the client with the org and project ids that `install` printed —

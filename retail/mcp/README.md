@@ -125,6 +125,22 @@ before anything is created. Everything lands as drafts: the project doesn't
 work until the secrets are bound, and nothing serves traffic until you
 publish.
 
+`install` creates a project only when the CLI has no project bound. If
+`metabind use --project` has already scoped it to one — after installing the
+other demo, say — install writes this tree into *that* project instead, as
+drafts alongside whatever is already there, and the name in the tree is
+ignored. `metabind status` reports the active scope; release it first if it
+names a project you don't want to install into:
+
+```sh
+metabind use --clear
+metabind use --org <org-id>
+```
+
+`use --clear` wipes the organization along with the project, which is why the
+org is set again after it — setting the org alone does not release a bound
+project.
+
 The start-to-finish walkthrough — CLI setup, secrets, publishing, the
 project thumbnail, and running the iOS app — is
 [the demo tutorial](../README.md). For installing and signing in to the CLI
