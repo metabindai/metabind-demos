@@ -84,7 +84,9 @@ exactly what it reaches and how to point it at your own catalogue instead.
 
 Run these from this directory (`retail/`).
 
-1. Sign in, and pick the organization to install into:
+1. Sign up at [metabind.ai](https://www.metabind.ai/signup) if you haven't
+   already — that creates your account and organization. Then sign in to the
+   CLI and pick the organization to install into:
 
    ```sh
    metabind auth login
@@ -154,14 +156,20 @@ Run these from this directory (`retail/`).
    Copy the value now — it is shown once, at creation. One Metabind API key
    authenticates both the Agent proxy and the MCP server.
 
-9. Optionally, give the project its thumbnail. `install` doesn't upload assets
-   or apply the settings in `mcp/metabind.jsonc`, so upload the shipped image,
-   then apply the settings that name it:
+9. Optionally, apply the project settings and thumbnail. `install` creates
+   the components and tools; the settings in `mcp/metabind.jsonc` — MCP
+   instructions, agent system prompt, platforms — are applied by `push`:
 
    ```sh
    metabind asset upload mcp/assets/files/project-thumbnail.png
-   metabind project update <project-id> --from-file mcp/metabind.jsonc
+   metabind sync repair --out mcp --org <org-id> --project <project-id>
+   metabind push --out mcp
+   metabind project update <project-id> \
+     --data '{"settings":{"thumbnailUrl":"<url from asset upload>"}}'
+   metabind publish
    ```
+
+   `push` rewrites the tool drafts, so publish once more to release them.
 
 > [!NOTE]
 > Configure the client with the org and project ids that `install` printed —

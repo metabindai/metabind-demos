@@ -70,10 +70,9 @@ One command turns it into a project in your organization (`metabind` CLI,
 metabind install --dir . --yes
 ```
 
-`install` mints fresh ids for everything it creates and writes this
-checkout's sync baseline against the new project — so after installing, this
-directory is a live checkout of *your* project, ready to edit and push.
-Everything is created as drafts; nothing serves traffic until you publish.
+This creates a new project in your organization, with fresh ids for
+everything in the tree. Everything lands as drafts; nothing serves traffic
+until you publish.
 
 The start-to-finish walkthrough — CLI setup, publishing, the project icon,
 and running the iOS and Android apps — is [the demo tutorial](../README.md).
@@ -83,7 +82,13 @@ For installing and signing in to the CLI itself, see
 ## Edit and push
 
 After install, the copy of this project on the server is the source of
-truth, and this directory is a checkout of it. The loop:
+truth. Make this directory a checkout of it once:
+
+```sh
+metabind sync repair --org <org-id> --project <project-id>
+```
+
+Then the loop:
 
 1. Edit the source — a card in `components/view/`, a handler in
    `components/data/`, the system prompt in `agent/`.

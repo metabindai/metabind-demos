@@ -1,19 +1,18 @@
 {
-  "$schema": "../../.metabind/sdk/schemas/data-tool.schema.json",
-  "title": "Product Lookup",
-  "description": "Fetch one or more Oak&Ivory products by id. Never call this from the LLM. This is only to be called from ui tools. ",
-  "component": "ProductLookup",
-  "annotations": {
-    "idempotentHint": true,
-    "readOnlyHint": true
+  "$schema": "../../.metabind/schemas/tool.json",
+  "config": {
+    "allowedDomains": [
+      "api.metabind.ai"
+    ],
+    "annotations": {
+      "idempotentHint": true,
+      "readOnlyHint": true,
+      "title": "Product Lookup"
+    },
+    "execution": {
+      "taskSupport": "forbidden"
+    }
   },
-  "allowedDomains": [
-    "api.metabind.ai"
-  ],
-  "secrets": [
-    "METABIND_API_KEY"
-  ],
-  "execution": {
-    "taskSupport": "forbidden"
-  }
+  "description": "Fetch one or more Oak&Ivory products by id. Never call this from the LLM. This is only to be called from ui tools. ",
+  "rootComponent": "ProductLookup"
 }

@@ -1,6 +1,10 @@
 {
-  "$schema": "../../.metabind/sdk/schemas/view-tool.schema.json",
-  "title": "ProductSpecs",
+  "$schema": "../../.metabind/schemas/tool.json",
+  "config": {
+    "annotations": {
+      "title": "ProductSpecs"
+    }
+  },
   "description": "Generates a product spec card. You'll need to use the non compact version of product search to feed this , as it must have a valid product image url. Or you can use product_lookup with a single id.",
-  "component": "ProductSpecs"
+  "rootComponent": "ProductSpecs"
 }
