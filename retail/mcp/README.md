@@ -13,12 +13,12 @@ Everything the project is made of lives in this tree, one file per object:
 |---|---|
 | `components/data/*.ts` | Handlers for the four data tools, plus `CacheImage`, an internal image cache. |
 | `components/view/*.ts` | 22 BindJS view components: the ten card surfaces the assistant renders, and the shared building blocks behind them. |
-| `tools/data/*.json` | The tool definitions the model sees — name, description, secrets, and annotations — one file per tool. |
+| `tools/data/*.json` | The tool definitions the model sees — description, root component, and config (allowed domains, annotations) — one file per tool. |
 | `tools/view/*.json` | Matching definitions for the card tools. |
 | `metabind.jsonc` | Project settings. The prose instructions the MCP server serves to clients live next to it in `mcp-instructions.md`. |
 | `agent/` | Settings for the hosted-chat agent, with the system prompt in `agent/system-prompt.md`. |
 | `assets/files/` | The project thumbnail, synced down from the project. |
-| `.metabind/sdk/` | Generated TypeScript typings that give you autocompletion while authoring components. |
+| `.metabind/secrets.json` | The names of the secrets this project reads. Values never sync; `metabind inspect` reports these as the consent preview. |
 
 The data tools read the catalogue and generate imagery:
 
@@ -108,9 +108,8 @@ selection are all catalogue-driven.
 ## Install
 
 This tree is project **source**, not a checkout of ours. The per-checkout
-sync state — `.metabind/state.json`, `metabind.resolved` and
-`.metabind/secrets.json` — is gitignored, so nothing in it addresses our
-project.
+sync state — `.metabind/state.json` and `metabind.resolved` — is gitignored,
+so nothing in it addresses our project.
 
 One command turns it into a project in your organization (`metabind` CLI,
 0.9.0 or newer, run from this directory):
@@ -119,13 +118,12 @@ One command turns it into a project in your organization (`metabind` CLI,
 metabind install --dir . --yes
 ```
 
-`--yes` consents to what the tree declares — the secrets and outbound calls
-above; `metabind inspect --dir .` shows the same before anything is created.
-`install` mints fresh ids for everything it creates and writes this
-checkout's sync baseline against the new project — so after installing, this
-directory is a live checkout of *your* project, ready to edit and push.
-Everything is created as drafts; the project doesn't work until the secrets
-are bound, and nothing serves traffic until you publish.
+This creates a new project in your organization, with fresh ids for
+everything in the tree. `--yes` consents to what the tree declares — the
+secrets and outbound calls above; `metabind inspect --dir .` shows the same
+before anything is created. Everything lands as drafts: the project doesn't
+work until the secrets are bound, and nothing serves traffic until you
+publish.
 
 The start-to-finish walkthrough — CLI setup, secrets, publishing, the
 project thumbnail, and running the iOS app — is
@@ -135,7 +133,13 @@ itself, see [Install and Sign In](https://docs.metabind.ai/cli/install).
 ## Edit and push
 
 After install, the copy of this project on the server is the source of
-truth, and this directory is a checkout of it. The loop:
+truth. Make this directory a checkout of it once:
+
+```sh
+metabind sync repair --org <org-id> --project <project-id>
+```
+
+Then the loop:
 
 1. Edit the source — a card in `components/view/`, a handler in
    `components/data/`, the system prompt in `agent/`.

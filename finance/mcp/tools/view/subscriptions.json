@@ -1,6 +1,10 @@
 {
-  "$schema": "../../.metabind/sdk/schemas/view-tool.schema.json",
-  "title": "Subscriptions",
+  "$schema": "../../.metabind/schemas/tool.json",
+  "config": {
+    "annotations": {
+      "title": "Subscriptions"
+    }
+  },
   "description": "Recurring charges: total monthly cost and a row per subscription with its cadence, next charge date, and New / price-increase flags. It loads its own data.",
-  "component": "Subscriptions"
+  "rootComponent": "Subscriptions"
 }

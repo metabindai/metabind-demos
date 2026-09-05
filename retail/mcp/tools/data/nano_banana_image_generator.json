@@ -1,11 +1,9 @@
 {
-  "$schema": "../../.metabind/sdk/schemas/data-tool.schema.json",
-  "description": "",
-  "component": "NanoBananaImageGenerator",
-  "allowedDomains": [
-    "generativelanguage.googleapis.com"
-  ],
-  "secrets": [
-    "GEMINI_API_KEY"
-  ]
+  "$schema": "../../.metabind/schemas/tool.json",
+  "config": {
+    "allowedDomains": [
+      "generativelanguage.googleapis.com"
+    ]
+  },
+  "rootComponent": "NanoBananaImageGenerator"
 }

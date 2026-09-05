@@ -80,7 +80,9 @@ a secret, or calls an external host.
 
 Run these from this directory (`finance/`).
 
-1. Sign in, and pick the organization to install into:
+1. Sign up at [metabind.ai](https://www.metabind.ai/signup) if you haven't
+   already — that creates your account and organization. Then sign in to the
+   CLI and pick the organization to install into:
 
    ```sh
    metabind auth login
@@ -129,15 +131,24 @@ Run these from this directory (`finance/`).
    Copy the value now — it is shown once, at creation. One Metabind API key
    authenticates both the Agent proxy and the MCP server.
 
-7. Optionally, give the project its icon. `install` creates components and
-   tools only — it doesn't upload assets or apply the settings in
-   `mcp/metabind.jsonc` — so upload the shipped thumbnail and point the
-   settings at the CDN URL you get back:
+7. Optionally, apply the project settings and thumbnail. `install` creates
+   the components and tools; the settings in `mcp/metabind.jsonc` — the MCP
+   instructions and the agent system prompt — are applied by `push`:
 
    ```sh
    metabind asset upload mcp/assets/files/project-thumbnail.png
-   metabind project update <project-id> --data '{"settings":{"thumbnailUrl":"<cdnUrl>","mcp":{"icons":[{"src":"<cdnUrl>","sizes":["1024x1024"],"mimeType":"image/png"}]}}}'
+   metabind sync repair --out mcp --org <org-id> --project <project-id>
+   metabind push --out mcp
+   metabind project update <project-id> \
+     --data '{"settings":{"thumbnailUrl":"<url from asset upload>"}}'
+   metabind publish
    ```
+
+   `push` rewrites the tool drafts, so publish once more to release them.
+
+   Set `thumbnailUrl` after pushing, not before: `project update` replaces
+   nested settings objects rather than merging them, so writing
+   `settings.mcp` here would drop the instructions `push` just applied.
 
 > [!NOTE]
 > Configure the clients with the org and project ids that `install` printed —

@@ -1,6 +1,10 @@
 {
-  "$schema": "../../.metabind/sdk/schemas/view-tool.schema.json",
-  "title": "Product Recommendations",
+  "$schema": "../../.metabind/schemas/tool.json",
+  "config": {
+    "annotations": {
+      "title": "Product Recommendations"
+    }
+  },
   "description": "Presents product recommendations",
-  "component": "ProductRecommendation"
+  "rootComponent": "ProductRecommendation"
 }
