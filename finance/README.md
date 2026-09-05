@@ -87,8 +87,15 @@ Run these from this directory (`finance/`).
    ```sh
    metabind auth login
    metabind org list
+   metabind use --clear
    metabind use --org <org-id>
    ```
+
+   `use --clear` matters if you have used the CLI before. `install` in
+   step 3 creates a project only when none is bound, and installs into the
+   bound one otherwise — after the Retail demo, for instance. Setting the org
+   alone does not release a project bound earlier; `metabind status` shows
+   the active scope.
 
 2. See what the tree declares before creating anything:
 
