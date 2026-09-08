@@ -22,8 +22,17 @@ dependencyResolutionManagement {
         // The Metabind libraries and their BindJS dependency both publish here.
         // GitHub Packages always requires authentication, even to read a public
         // package: set gpr.user / gpr.key, or GITHUB_ACTOR / GITHUB_TOKEN.
+        // BindJS and the SDK publish from their respective source repositories.
         maven {
-            url = uri("https://maven.pkg.github.com/metabindai/bindjs-android-binary")
+            url = uri("https://maven.pkg.github.com/metabindai/bindjs-android")
+            content { includeModule("ai.metabind", "bindjs-android") }
+            credentials {
+                username = providers.gradleProperty("gpr.user").orNull ?: System.getenv("GITHUB_ACTOR")
+                password = providers.gradleProperty("gpr.key").orNull ?: System.getenv("GITHUB_TOKEN")
+            }
+        }
+        maven {
+            url = uri("https://maven.pkg.github.com/metabindai/metabind-android")
             credentials {
                 username = providers.gradleProperty("gpr.user").orElse(providers.environmentVariable("GITHUB_ACTOR")).get()
                 password = providers.gradleProperty("gpr.key").orElse(providers.environmentVariable("GITHUB_TOKEN")).get()

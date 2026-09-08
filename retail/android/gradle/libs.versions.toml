@@ -22,7 +22,7 @@ kotlinxSerializationJson = "1.8.1"
 richtext = "1.0.0-alpha01"
 datastore = "1.1.1"
 # The published SDK version this app ships against. Bump when the monorepo publishes.
-metabindAssistant = "0.2.8"
+metabindAssistant = "0.2.10"
 
 [libraries]
 androidx-core-ktx = { group = "androidx.core", name = "core-ktx", version.ref = "coreKtx" }
