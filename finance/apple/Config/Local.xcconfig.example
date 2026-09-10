@@ -9,5 +9,5 @@
 FINANCE_DEMO_BUNDLE_ID = com.yourcompany.MetabindFinanceDemo
 FINANCE_DEMO_ORG_ID = your_org_id
 FINANCE_DEMO_PROJECT_ID = your_project_id
-FINANCE_DEMO_API_KEY = your_api_key
+FINANCE_DEMO_API_KEY =
 DEVELOPMENT_TEAM = YOUR_TEAM_ID
