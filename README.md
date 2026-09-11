@@ -27,10 +27,18 @@ real native SwiftUI and Jetpack Compose through the Assistant SDK.
 Two demos, deliberately opposite in shape — read both before deciding which
 one your product is:
 
-| Demo | What it shows | Video |
-|---|---|---|
-| [finance](finance) | Personal-finance assistant with purpose-built answer surfaces instead of a chat transcript. iOS and Android. | [▶️ Watch](https://youtu.be/yc-FLvOt94E) |
-| [retail](retail) | Oak&Ivory, a furniture-store shopping assistant where the conversation itself is the product. iOS and Android. | [▶️ Watch](https://youtu.be/9eI16TF2Ntc) |
+| Demo | What it shows |
+|---|---|
+| [finance](finance) | Personal-finance assistant with purpose-built answer surfaces instead of a chat transcript. iOS and Android. |
+| [retail](retail) | Oak&Ivory, a furniture-store shopping assistant where the conversation itself is the product. iOS and Android. |
+
+https://github.com/user-attachments/assets/9a840b88-dc88-4ab4-927e-0a8dc651dbe3
+
+*The Finance demo, running in the iOS app.*
+
+https://github.com/user-attachments/assets/cb965ec7-c675-41d2-9ffc-22c1635efb12
+
+*The Retail demo, running in the iOS app.*
 
 Each demo is one folder holding every platform client and the MCP project it
 talks to:
