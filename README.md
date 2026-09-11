@@ -16,7 +16,7 @@ define the tools, we run the server. The same agent runs inside your own iOS,
 Android, and web apps, and across Claude, ChatGPT, and every MCP host, on the
 open [MCP](https://modelcontextprotocol.io) standard.
 
-These demos show the inside-your-own-app half: the same MCP App rendered as
+These demos show the inside-your-own-app half: the same [MCP App](https://github.com/modelcontextprotocol/ext-apps) rendered as
 real native SwiftUI and Jetpack Compose through the Assistant SDK.
 
 **[Start free at metabind.ai](https://www.metabind.ai/signup)** ·
