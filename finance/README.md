@@ -5,7 +5,7 @@ on launch and uses the rendered answer as its home screen; every follow-up
 opens on a purpose-built surface. The same assistant runs natively on iOS and
 Android from one MCP App definition.
 
-https://github.com/user-attachments/assets/756c7668-700e-452c-b138-9c1b8280bc50
+https://github.com/user-attachments/assets/9a840b88-dc88-4ab4-927e-0a8dc651dbe3
 
 *The Finance demo, running in the iOS app.*
 

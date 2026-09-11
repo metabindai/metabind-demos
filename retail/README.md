@@ -5,7 +5,7 @@ itself is the product. You ask about a chair and the assistant answers in
 prose, rendering product cards, comparisons, and room designs inline as native
 UI.
 
-https://github.com/user-attachments/assets/a003056b-f6f1-47b1-896e-c44553d7ab41
+https://github.com/user-attachments/assets/cb965ec7-c675-41d2-9ffc-22c1635efb12
 
 *The Retail demo, running in the iOS app.*
 
