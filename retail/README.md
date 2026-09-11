@@ -22,7 +22,7 @@ Android, and web apps, and across Claude, ChatGPT, and every MCP host, on the
 open [MCP](https://modelcontextprotocol.io) standard.
 
 This demo shows the inside-your-own-app half, rendered as real native SwiftUI
-through the Assistant SDK.
+and Jetpack Compose through the Assistant SDK.
 
 **[Start free at metabind.ai](https://metabind.ai)** ·
 **[Read the docs](https://docs.metabind.ai)**
@@ -277,5 +277,5 @@ see [the Android app's README](android/README.md).
 ## License
 
 Apache 2.0. See [`LICENSE`](../LICENSE) and [`NOTICE`](../NOTICE) at the
-repository root; `apple/` and `mcp/` carry their own copies because they are
-meant to be copied out as starters.
+repository root; `apple/`, `android/`, and `mcp/` carry their own copies
+because they are meant to be copied out as starters.
