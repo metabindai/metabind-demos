@@ -5,10 +5,9 @@ on launch and uses the rendered answer as its home screen; every follow-up
 opens on a purpose-built surface. The same assistant runs natively on iOS and
 Android from one MCP App definition.
 
-[![Watch the Finance demo video: the iOS app answering with rendered
-surfaces instead of a transcript](https://img.youtube.com/vi/yc-FLvOt94E/maxresdefault.jpg)](https://youtu.be/yc-FLvOt94E)
+https://github.com/user-attachments/assets/756c7668-700e-452c-b138-9c1b8280bc50
 
-*▶️ [Watch the Finance demo on YouTube](https://youtu.be/yc-FLvOt94E) — the iOS app.*
+*The Finance demo, running in the iOS app.*
 
 ## What is Metabind
 

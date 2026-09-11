@@ -5,10 +5,9 @@ itself is the product. You ask about a chair and the assistant answers in
 prose, rendering product cards, comparisons, and room designs inline as native
 UI.
 
-[![Watch the Retail demo video: the Oak&Ivory iOS app rendering product cards
-and room designs inline in the conversation](https://img.youtube.com/vi/9eI16TF2Ntc/maxresdefault.jpg)](https://youtu.be/9eI16TF2Ntc)
+https://github.com/user-attachments/assets/a003056b-f6f1-47b1-896e-c44553d7ab41
 
-*▶️ [Watch the Retail demo on YouTube](https://youtu.be/9eI16TF2Ntc) — the iOS app.*
+*The Retail demo, running in the iOS app.*
 
 ## What is Metabind
 
