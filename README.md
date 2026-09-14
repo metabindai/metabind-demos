@@ -108,3 +108,8 @@ how to edit and push changes.
 ## License
 
 Apache 2.0. See [`LICENSE`](LICENSE) and [`NOTICE`](NOTICE).
+
+## Pending Android package migration
+
+See [migration instructions](docs/ANDROID_PACKAGE_MIGRATION.md) before using the
+new dependency pins. The registry cutover is not complete.
