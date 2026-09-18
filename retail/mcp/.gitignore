@@ -6,8 +6,11 @@
 .metabind/state.json
 metabind.resolved
 
-# Secrets are KMS-encrypted server-side and never sync. Never commit.
-.metabind/secrets.json
+# Secret VALUES are KMS-encrypted server-side and never sync. Never commit a
+# value. `.metabind/secrets.json` holds only the secret NAMES this project
+# reads, and it is what `metabind inspect` reports as the consent preview, so
+# it is committed on purpose — without it `inspect` under-reports what
+# `install --yes` is agreeing to.
 
 .DS_Store
 node_modules/

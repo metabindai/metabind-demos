@@ -5,10 +5,9 @@ on launch and uses the rendered answer as its home screen; every follow-up
 opens on a purpose-built surface. The same assistant runs natively on iOS and
 Android from one MCP App definition.
 
-[![Watch the Finance demo video: the iOS app answering with rendered
-surfaces instead of a transcript](https://img.youtube.com/vi/yc-FLvOt94E/maxresdefault.jpg)](https://youtu.be/yc-FLvOt94E)
+https://github.com/user-attachments/assets/9a840b88-dc88-4ab4-927e-0a8dc651dbe3
 
-*▶️ [Watch the Finance demo on YouTube](https://youtu.be/yc-FLvOt94E) — the iOS app.*
+*The Finance demo, running in the iOS app.*
 
 ## What is Metabind
 
@@ -80,13 +79,22 @@ a secret, or calls an external host.
 
 Run these from this directory (`finance/`).
 
-1. Sign in, and pick the organization to install into:
+1. Sign up at [metabind.ai](https://www.metabind.ai/signup) if you haven't
+   already — that creates your account and organization. Then sign in to the
+   CLI and pick the organization to install into:
 
    ```sh
    metabind auth login
    metabind org list
+   metabind use --clear
    metabind use --org <org-id>
    ```
+
+   `use --clear` matters if you have used the CLI before. `install` in
+   step 3 creates a project only when none is bound, and installs into the
+   bound one otherwise — after the Retail demo, for instance. Setting the org
+   alone does not release a project bound earlier; `metabind status` shows
+   the active scope.
 
 2. See what the tree declares before creating anything:
 
@@ -123,21 +131,42 @@ Run these from this directory (`finance/`).
 6. Mint the API key the apps sign in with:
 
    ```sh
-   metabind api-key create
+   metabind api-key create --name "Banking Assistant"
    ```
 
    Copy the value now — it is shown once, at creation. One Metabind API key
    authenticates both the Agent proxy and the MCP server.
 
-7. Optionally, give the project its icon. `install` creates components and
-   tools only — it doesn't upload assets or apply the settings in
-   `mcp/metabind.jsonc` — so upload the shipped thumbnail and point the
-   settings at the CDN URL you get back:
+7. Optionally, apply the project settings and thumbnail. `install` creates
+   the components and tools; the settings in `mcp/metabind.jsonc` — the MCP
+   instructions and the agent system prompt — are applied by `push`:
 
    ```sh
    metabind asset upload mcp/assets/files/project-thumbnail.png
-   metabind project update <project-id> --data '{"settings":{"thumbnailUrl":"<cdnUrl>","mcp":{"icons":[{"src":"<cdnUrl>","sizes":["1024x1024"],"mimeType":"image/png"}]}}}'
+   metabind sync repair --out mcp --org <org-id> --project <project-id>
+   metabind push --out mcp
+   metabind project get <project-id>
+   metabind project update <project-id> \
+     --data '{"settings":{"thumbnailUrl":"<url from asset upload>"}}'
+   metabind publish
    ```
+
+   `push` rewrites the tool drafts, so publish once more to release them.
+
+   The `project get` is not decoration. `project update` refuses to write an
+   entity the CLI has not read recently, so that it can tell the project
+   hasn't moved underneath you:
+
+   ```
+   CONFLICT: Refusing project update <project-id>: no recent read recorded.
+   ```
+
+   A project you just installed has never been read, so the first update
+   trips this without it.
+
+   Set `thumbnailUrl` after pushing, not before: `project update` replaces
+   nested settings objects rather than merging them, so writing
+   `settings.mcp` here would drop the instructions `push` just applied.
 
 > [!NOTE]
 > Configure the clients with the org and project ids that `install` printed —

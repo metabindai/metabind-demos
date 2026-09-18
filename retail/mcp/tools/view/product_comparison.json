@@ -1,6 +1,10 @@
 {
-  "$schema": "../../.metabind/sdk/schemas/view-tool.schema.json",
-  "title": "Product Comparison",
+  "$schema": "../../.metabind/schemas/tool.json",
+  "config": {
+    "annotations": {
+      "title": "Product Comparison"
+    }
+  },
   "description": "A dynamic product comparison table with configurable products and dimensions",
-  "component": "ProductComparison"
+  "rootComponent": "ProductComparison"
 }

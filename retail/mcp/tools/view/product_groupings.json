@@ -1,6 +1,10 @@
 {
-  "$schema": "../../.metabind/sdk/schemas/view-tool.schema.json",
-  "title": "Product Groupings",
+  "$schema": "../../.metabind/schemas/tool.json",
+  "config": {
+    "annotations": {
+      "title": "Product Groupings"
+    }
+  },
   "description": "Product Groupings view displays personalized product suggestions to users based on their browsing and purchase history.\nPrefer the productIds shape for populating the carousel",
-  "component": "ProductGroupings"
+  "rootComponent": "ProductGroupings"
 }

@@ -1,9 +1,11 @@
 {
-  "$schema": "../../.metabind/sdk/schemas/data-tool.schema.json",
-  "description": "Recurring-charge detection. Numbers to reason with — to display, use the subscriptions card.",
-  "component": "GetSubscriptions",
-  "annotations": {
-    "idempotentHint": true,
-    "readOnlyHint": true
-  }
+  "$schema": "../../.metabind/schemas/tool.json",
+  "config": {
+    "annotations": {
+      "idempotentHint": true,
+      "readOnlyHint": true
+    }
+  },
+  "description": "Recurring-charge detection. Numbers to reason with \u2014 to display, use the subscriptions card.",
+  "rootComponent": "GetSubscriptions"
 }

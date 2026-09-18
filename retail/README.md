@@ -5,10 +5,9 @@ itself is the product. You ask about a chair and the assistant answers in
 prose, rendering product cards, comparisons, and room designs inline as native
 UI.
 
-[![Watch the Retail demo video: the Oak&Ivory iOS app rendering product cards
-and room designs inline in the conversation](https://img.youtube.com/vi/9eI16TF2Ntc/maxresdefault.jpg)](https://youtu.be/9eI16TF2Ntc)
+https://github.com/user-attachments/assets/cb965ec7-c675-41d2-9ffc-22c1635efb12
 
-*▶️ [Watch the Retail demo on YouTube](https://youtu.be/9eI16TF2Ntc) — the iOS app.*
+*The Retail demo, running in the iOS app.*
 
 ## What is Metabind
 
@@ -84,13 +83,22 @@ exactly what it reaches and how to point it at your own catalogue instead.
 
 Run these from this directory (`retail/`).
 
-1. Sign in, and pick the organization to install into:
+1. Sign up at [metabind.ai](https://www.metabind.ai/signup) if you haven't
+   already — that creates your account and organization. Then sign in to the
+   CLI and pick the organization to install into:
 
    ```sh
    metabind auth login
    metabind org list
+   metabind use --clear
    metabind use --org <org-id>
    ```
+
+   `use --clear` matters if you have used the CLI before. `install` in
+   step 3 creates a project only when none is bound, and installs into the
+   bound one otherwise — after the Finance demo, for instance. Setting the org
+   alone does not release a project bound earlier; `metabind status` shows
+   the active scope.
 
 2. See what the tree declares before creating anything:
 
@@ -148,20 +156,38 @@ Run these from this directory (`retail/`).
 8. Mint the API key the app signs in with:
 
    ```sh
-   metabind api-key create
+   metabind api-key create --name "Oak & Ivory"
    ```
 
    Copy the value now — it is shown once, at creation. One Metabind API key
    authenticates both the Agent proxy and the MCP server.
 
-9. Optionally, give the project its thumbnail. `install` doesn't upload assets
-   or apply the settings in `mcp/metabind.jsonc`, so upload the shipped image,
-   then apply the settings that name it:
+9. Optionally, apply the project settings and thumbnail. `install` creates
+   the components and tools; the settings in `mcp/metabind.jsonc` — MCP
+   instructions, agent system prompt, platforms — are applied by `push`:
 
    ```sh
    metabind asset upload mcp/assets/files/project-thumbnail.png
-   metabind project update <project-id> --from-file mcp/metabind.jsonc
+   metabind sync repair --out mcp --org <org-id> --project <project-id>
+   metabind push --out mcp
+   metabind project get <project-id>
+   metabind project update <project-id> \
+     --data '{"settings":{"thumbnailUrl":"<url from asset upload>"}}'
+   metabind publish
    ```
+
+   `push` rewrites the tool drafts, so publish once more to release them.
+
+   The `project get` is not decoration. `project update` refuses to write an
+   entity the CLI has not read recently, so that it can tell the project
+   hasn't moved underneath you:
+
+   ```
+   CONFLICT: Refusing project update <project-id>: no recent read recorded.
+   ```
+
+   A project you just installed has never been read, so the first update
+   trips this without it.
 
 > [!NOTE]
 > Configure the client with the org and project ids that `install` printed —

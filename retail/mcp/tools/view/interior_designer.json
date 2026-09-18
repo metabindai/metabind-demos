@@ -1,6 +1,10 @@
 {
-  "$schema": "../../.metabind/sdk/schemas/view-tool.schema.json",
-  "title": "Interior Designer",
+  "$schema": "../../.metabind/schemas/tool.json",
+  "config": {
+    "annotations": {
+      "title": "Interior Designer"
+    }
+  },
   "description": "Interior Designer is a view component that displays and manages interior design layouts, spaces, and visual styling configurations.",
-  "component": "InteriorDesigner"
+  "rootComponent": "InteriorDesigner"
 }
