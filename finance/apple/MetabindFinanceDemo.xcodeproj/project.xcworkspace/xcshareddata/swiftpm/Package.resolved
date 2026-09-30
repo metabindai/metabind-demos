@@ -15,8 +15,8 @@
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/metabindai/bindjs-apple.git",
       "state" : {
-        "revision" : "e771ba16b1bad6b89ab4c8e210d2b40e638669e2",
-        "version" : "1.1.6"
+        "revision" : "d236afad44f0eb12d6326fb690cc601521e65003",
+        "version" : "1.2.0"
       }
     },
     {
