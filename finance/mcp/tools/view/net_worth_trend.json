@@ -1,9 +1,7 @@
 {
   "$schema": "../../.metabind/schemas/tool.json",
   "config": {
-    "annotations": {
-      "title": "Net Worth Trend"
-    }
+    "title": "Net Worth Trend"
   },
   "description": "Net worth: current total, change over the period, a trend chart, and the account balances behind it. It loads its own data. To compare periods against each other pass chartStyle:'bar' plus groupBy ('year' for this-year-vs-last-year, 'month' for month-by-month) \u2014 each bar is that period's closing balance.",
   "rootComponent": "NetWorthTrend"

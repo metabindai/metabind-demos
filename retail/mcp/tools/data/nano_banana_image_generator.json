@@ -3,7 +3,9 @@
   "config": {
     "allowedDomains": [
       "generativelanguage.googleapis.com"
-    ]
+    ],
+    "title": "Image Generator"
   },
+  "description": "Generates an image from a text prompt and optional reference images. The Interior Designer and Product Specifications views call it to render room mock-ups and product spec sheets.",
   "rootComponent": "NanoBananaImageGenerator"
 }
