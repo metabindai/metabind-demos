@@ -6,12 +6,12 @@
     ],
     "annotations": {
       "idempotentHint": true,
-      "readOnlyHint": true,
-      "title": "Product Lookup"
+      "readOnlyHint": true
     },
     "execution": {
       "taskSupport": "forbidden"
-    }
+    },
+    "title": "Product Lookup"
   },
   "description": "Fetch one or more Oak&Ivory products by id. Never call this from the LLM. This is only to be called from ui tools. ",
   "rootComponent": "ProductLookup"

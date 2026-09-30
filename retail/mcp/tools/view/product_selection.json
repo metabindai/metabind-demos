@@ -1,9 +1,7 @@
 {
   "$schema": "../../.metabind/schemas/tool.json",
   "config": {
-    "annotations": {
-      "title": "ProductSelection"
-    }
+    "title": "Product Selection"
   },
   "description": "Always, 100% , every time, use this when the user specifically says \"Start a design based on products I've purchased.\". But in that case do not pass any products, as the defaults will be fine.",
   "rootComponent": "ProductSelection"

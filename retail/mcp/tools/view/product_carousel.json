@@ -1,9 +1,7 @@
 {
   "$schema": "../../.metabind/schemas/tool.json",
   "config": {
-    "annotations": {
-      "title": "Product Carousel"
-    }
+    "title": "Product Carousel"
   },
   "description": "A UI component that displays multiple products in a rotating or scrollable carousel interface for browsing.",
   "rootComponent": "ProductCarousel"

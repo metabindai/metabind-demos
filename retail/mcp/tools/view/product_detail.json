@@ -1,9 +1,7 @@
 {
   "$schema": "../../.metabind/schemas/tool.json",
   "config": {
-    "annotations": {
-      "title": "Product Detail"
-    }
+    "title": "Product Detail"
   },
   "description": "A split-out product detail card with image, CTA, description, features, and reviews.\nAlways try and pass features based off the description/ information you know about the product.",
   "rootComponent": "ProductDetail"

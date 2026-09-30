@@ -1,9 +1,7 @@
 {
   "$schema": "../../.metabind/schemas/tool.json",
   "config": {
-    "annotations": {
-      "title": "Product Recommendations"
-    }
+    "title": "Product Recommendations"
   },
   "description": "Presents product recommendations",
   "rootComponent": "ProductRecommendation"
