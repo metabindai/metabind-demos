@@ -108,7 +108,7 @@ const SPEC_SHEET_ASPECT = 1024 / 1536;
 const EXAMPLE_PRODUCT: HydratedProduct = {
     id: "cont_example_lounge_chair",
     title: "Lounge Chair",
-    imageUrl: "https://cdn-dev.metabind.ai/IQDOOSfxsCz6vOufDazi/vIMNFCjt4Hu2QhD4egHR/assets/PtlHc3zPpDe2CMrdjB7W/dimension_spec_example.png"
+    imageUrl: "https://cdn.metabind.ai/IgJH0BzIn4LlfnCbcDc7/Q0WNzrjYuO23n6k2EjKE/assets/wox659cxZX64WSt3ussf/dimension_spec_example-2.png"
 };
 
 // ─── Body ─────────────────────────────────────────────────

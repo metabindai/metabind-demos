@@ -94,7 +94,7 @@ const circleSVG = `
 </svg>
 `;
 
-const BACKGROUND_TEXTURE_URL = "https://cdn-dev.metabind.ai/IQDOOSfxsCz6vOufDazi/vIMNFCjt4Hu2QhD4egHR/components/h63fO5EeUDK2l38vTlas/latest/assets/udFg65MV9EZK2k4H4vqA/bg-texture.jpg";
+const BACKGROUND_TEXTURE_URL = "https://cdn.metabind.ai/IgJH0BzIn4LlfnCbcDc7/Q0WNzrjYuO23n6k2EjKE/assets/u3ddbCJvTaxQiWSh1zGu/bg-texture.jpg";
 
 const EMPTY_PRODUCT: HydratedProduct = {
     id: "",
@@ -109,17 +109,17 @@ const EXAMPLE_PRODUCTS: HydratedProduct[] = [
     {
         id: "cont_example_siena_cushion",
         title: "Siena Cushion Set",
-        imageUrl: "https://cdn-dev.metabind.ai/IQDOOSfxsCz6vOufDazi/vIMNFCjt4Hu2QhD4egHR/assets/P4W8G12dIc7F6XTCRRWm/canopy-bed-lined-set-green.png"
+        imageUrl: "https://cdn.metabind.ai/IgJH0BzIn4LlfnCbcDc7/Q0WNzrjYuO23n6k2EjKE/assets/dLGPXJ07M180JDy2WRp7/canopy-bed-lined-set-green.png"
     },
     {
         id: "cont_example_terracotta_planter",
         title: "Terracotta Drift Planter",
-        imageUrl: "https://cdn-dev.metabind.ai/IQDOOSfxsCz6vOufDazi/LWsOA82uk3xZKMhr3bXc/assets/W7yflt7A1gRtvJbLLfs9/terracotta-drift-planter.png"
+        imageUrl: "https://cdn.metabind.ai/IgJH0BzIn4LlfnCbcDc7/Q0WNzrjYuO23n6k2EjKE/assets/e2M6g7NhmkDj8hDdPbk0/terracotta-drift-planter.png"
     },
     {
         id: "cont_example_stillwater",
         title: "Stillwater Diffuser",
-        imageUrl: "https://cdn-dev.metabind.ai/IQDOOSfxsCz6vOufDazi/LWsOA82uk3xZKMhr3bXc/assets/LfEHmxT7Ccaa2igtBWkX/stillwater-diffuser.png"
+        imageUrl: "https://cdn.metabind.ai/IgJH0BzIn4LlfnCbcDc7/Q0WNzrjYuO23n6k2EjKE/assets/XmJodF7QDp1n7kWG3SZ2/stillwater-diffuser.png"
     }
 ];
 

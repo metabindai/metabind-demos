@@ -84,7 +84,7 @@ const EXAMPLE_PRODUCTS: HydratedCard[] = [
         title: "Lumora Pendant Light",
         description: "Hand-blown ombre glass pendant fading from clear to warm amber. Brass canopy and twisted fabric cord included.",
         price: 289.00,
-        image: "https://cdn-dev.metabind.ai/IQDOOSfxsCz6vOufDazi/LWsOA82uk3xZKMhr3bXc/assets/QZhYPftn0yk37E6SV1Iq/lumora-pendant-light.png",
+        image: "https://cdn.metabind.ai/IgJH0BzIn4LlfnCbcDc7/Q0WNzrjYuO23n6k2EjKE/assets/Yg1S6RxRKKJ4WFE1gtDK/lumora-pendant-light.png",
         colors: ["#c78a3a", "#e6c48a", "#b8863a", "#cdb68a"]
     },
     {
@@ -92,7 +92,7 @@ const EXAMPLE_PRODUCTS: HydratedCard[] = [
         title: "Terracotta Drift Planter",
         description: "Sculptural terracotta with an asymmetric slanted rim and full-bellied body. Matte clay finish for herbs, succulents and small houseplants.",
         price: 79.00,
-        image: "https://cdn-dev.metabind.ai/IQDOOSfxsCz6vOufDazi/LWsOA82uk3xZKMhr3bXc/assets/W7yflt7A1gRtvJbLLfs9/terracotta-drift-planter.png",
+        image: "https://cdn.metabind.ai/IgJH0BzIn4LlfnCbcDc7/Q0WNzrjYuO23n6k2EjKE/assets/e2M6g7NhmkDj8hDdPbk0/terracotta-drift-planter.png",
         colors: ["#c58a6a", "#a86848", "#d9a888", "#7a4a32"]
     },
     {
@@ -100,7 +100,7 @@ const EXAMPLE_PRODUCTS: HydratedCard[] = [
         title: "Penumbra Candle",
         description: "Soy-wax candle cast into a raw speckled concrete vessel. Industrial-minimalist and reusable after the burn.",
         price: 48.00,
-        image: "https://cdn-dev.metabind.ai/IQDOOSfxsCz6vOufDazi/LWsOA82uk3xZKMhr3bXc/assets/Avf2JD2UWdfoiEXUpK6x/penumbra-candle.png",
+        image: "https://cdn.metabind.ai/IgJH0BzIn4LlfnCbcDc7/Q0WNzrjYuO23n6k2EjKE/assets/lhQ7kDmQKSa7acYnlJ5X/penumbra-candle.png",
         colors: ["#b8b3a8", "#8c887d", "#e6e1d0", "#585449"]
     },
     {
@@ -108,7 +108,7 @@ const EXAMPLE_PRODUCTS: HydratedCard[] = [
         title: "Stillwater Diffuser",
         description: "Sand-coloured stoneware reed diffuser with natural rattan reeds. Quiet home fragrance for bedrooms and calm living spaces.",
         price: 64.00,
-        image: "https://cdn-dev.metabind.ai/IQDOOSfxsCz6vOufDazi/LWsOA82uk3xZKMhr3bXc/assets/LfEHmxT7Ccaa2igtBWkX/stillwater-diffuser.png",
+        image: "https://cdn.metabind.ai/IgJH0BzIn4LlfnCbcDc7/Q0WNzrjYuO23n6k2EjKE/assets/XmJodF7QDp1n7kWG3SZ2/stillwater-diffuser.png",
         colors: ["#d9cdb4", "#c9bc9e", "#a8834a", "#8a7248"]
     }
 ];
