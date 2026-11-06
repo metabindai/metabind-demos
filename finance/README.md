@@ -242,8 +242,8 @@ see [the Android app's README](android/README.md).
 ## Where to next
 
 - [Edit the MCP project](mcp/README.md#edit-and-push) — change a component,
-  validate, push, and publish, with the reconcile scripts that keep every
-  card's figures agreeing.
+  validate, push, and publish — and the `BEGIN SHARED FEED` rule that keeps
+  every card's figures agreeing.
 - [The Retail demo](../retail) — the same SDKs with the opposite shape: the
   transcript is the product.
 - [Metabind for Apple](https://github.com/metabindai/metabind-apple) and

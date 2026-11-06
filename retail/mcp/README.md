@@ -2,8 +2,9 @@
 
 The server half of the Oak&Ivory demo: the tools the assistant calls and the
 BindJS components it renders, kept as flat files you can read, edit, and push
-with the `metabind` CLI. The iOS client in [`../apple`](../apple) talks to a
-copy of this project running in your own Metabind organization.
+with the `metabind` CLI. The clients in [`../apple`](../apple) and
+[`../android`](../android) talk to a copy of this project running in your own
+Metabind organization.
 
 ## What's inside
 
@@ -142,7 +143,7 @@ org is set again after it — setting the org alone does not release a bound
 project.
 
 The start-to-finish walkthrough — CLI setup, secrets, publishing, the
-project thumbnail, and running the iOS app — is
+project thumbnail, and running the iOS and Android apps — is
 [the demo tutorial](../README.md). For installing and signing in to the CLI
 itself, see [Install and Sign In](https://docs.metabind.ai/cli/install).
 
