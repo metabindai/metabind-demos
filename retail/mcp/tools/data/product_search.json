@@ -5,12 +5,12 @@
       "api.metabind.ai"
     ],
     "annotations": {
-      "readOnlyHint": true,
-      "title": "Product Search"
+      "readOnlyHint": true
     },
     "execution": {
       "taskSupport": "forbidden"
-    }
+    },
+    "title": "Product Search"
   },
   "description": "Tool that searches the Oak&Ivory product database. \nAlways use the compact option to get just back product ids and description, unless you need the absolutely full shape for a ui tool that needs it.",
   "rootComponent": "ProductSearch"

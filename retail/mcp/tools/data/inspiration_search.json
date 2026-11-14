@@ -5,12 +5,12 @@
       "api.metabind.ai"
     ],
     "annotations": {
-      "readOnlyHint": true,
-      "title": "InspirationSearch"
+      "readOnlyHint": true
     },
     "execution": {
       "taskSupport": "forbidden"
-    }
+    },
+    "title": "Inspiration Search"
   },
   "description": "Search Reference-tagged assets via the Metabind Assets API",
   "rootComponent": "InspirationSearch"
