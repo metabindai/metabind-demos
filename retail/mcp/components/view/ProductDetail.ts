@@ -118,7 +118,7 @@ const EXAMPLE_PRODUCT: HydratedProduct = {
     price: 128.99,
     description: "A sculpted lounge chair with a bent-ply birch frame and generous olive-green cushions. Light, modern, and quietly architectural.",
     imageUrl: "",
-    videoUrl: "https://cdn-dev.metabind.ai/IQDOOSfxsCz6vOufDazi/vIMNFCjt4Hu2QhD4egHR/assets/KkAuRbN2VL9tt51h751N/Chair.mp4"
+    videoUrl: "https://cdn.metabind.ai/IgJH0BzIn4LlfnCbcDc7/Q0WNzrjYuO23n6k2EjKE/assets/6dGlqmD133TnHS2oXnzK/Chair.mp4"
 };
 
 const SIZE_CONFIG = {

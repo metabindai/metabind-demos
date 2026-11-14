@@ -166,7 +166,7 @@ const previews = [
     Self({
         imageUrls: [],
         prompt: "",
-        fallbackImageUrl: "https://cdn-dev.metabind.ai/IQDOOSfxsCz6vOufDazi/vIMNFCjt4Hu2QhD4egHR/assets/PtlHc3zPpDe2CMrdjB7W/dimension_spec_example.png"
+        fallbackImageUrl: "https://cdn.metabind.ai/IgJH0BzIn4LlfnCbcDc7/Q0WNzrjYuO23n6k2EjKE/assets/wox659cxZX64WSt3ussf/dimension_spec_example-2.png"
     }).previewName("Fallback (no host)"),
     Self({
         imageUrls: [],

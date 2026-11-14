@@ -170,7 +170,7 @@ const previews = () => ([
         description: "Hand-blown ombre glass pendant fading from clear to warm amber. Brass canopy and twisted fabric cord included.",
         price: 289.00,
         colors: ["#c78a3a", "#e6c48a"],
-        image: "https://cdn-dev.metabind.ai/IQDOOSfxsCz6vOufDazi/LWsOA82uk3xZKMhr3bXc/assets/QZhYPftn0yk37E6SV1Iq/lumora-pendant-light.png"
+        image: "https://cdn.metabind.ai/IgJH0BzIn4LlfnCbcDc7/Q0WNzrjYuO23n6k2EjKE/assets/Yg1S6RxRKKJ4WFE1gtDK/lumora-pendant-light.png"
     })
         .environment('sizeStyle', 'regular')
         .previewName("Regular"),
@@ -181,7 +181,7 @@ const previews = () => ([
         description: "Bent-ply birch frame with generous olive-green cushions. Sculptural, light and modern with a warm organic palette.",
         price: 949.00,
         colors: ["#6b6c3f", "#d9c9a3"],
-        image: "https://cdn-dev.metabind.ai/IQDOOSfxsCz6vOufDazi/LWsOA82uk3xZKMhr3bXc/assets/AtZQQourd4khVBmeNmid/006-a-contemporary-lounge-chair-with-a-curve.jpg"
+        image: "https://cdn.metabind.ai/IgJH0BzIn4LlfnCbcDc7/Q0WNzrjYuO23n6k2EjKE/assets/Fz0HsVsOcOtIU3QJS4lZ/006-a-contemporary-lounge-chair-with-a-curve.jpg"
     })
 
         .environment('sizeStyle', 'medium')
@@ -193,7 +193,7 @@ const previews = () => ([
         description: "Mid-century wingback in textured ivory boucle on splayed solid walnut legs. Compact sculptural seating.",
         price: 1190.00,
         colors: ["#ece6d4", "#7a5438"],
-        image: "https://cdn-dev.metabind.ai/IQDOOSfxsCz6vOufDazi/LWsOA82uk3xZKMhr3bXc/assets/YWMoCwbF2Vo1NsLYNIMC/002-a-comfortable-low-profile-mid-century-mo.jpg"
+        image: "https://cdn.metabind.ai/IgJH0BzIn4LlfnCbcDc7/Q0WNzrjYuO23n6k2EjKE/assets/5DAdTph84m6Mavtn3Kkq/002-a-comfortable-low-profile-mid-century-mo.jpg"
     })
         .environment('sizeStyle', 'small')
         .previewName("Small"),

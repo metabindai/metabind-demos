@@ -13,7 +13,7 @@ const body = (props: InferProps<typeof properties>, children: Component[]): Comp
         ZStack([                        
             BrandBackground(),
 
-            Image({ contentMode: 'fill', url: "https://cdn-dev.metabind.ai/IQDOOSfxsCz6vOufDazi/vIMNFCjt4Hu2QhD4egHR/components/h63fO5EeUDK2l38vTlas/latest/assets/udFg65MV9EZK2k4H4vqA/bg-texture.jpg" })
+            Image({ contentMode: 'fill', url: "https://cdn.metabind.ai/IgJH0BzIn4LlfnCbcDc7/Q0WNzrjYuO23n6k2EjKE/assets/u3ddbCJvTaxQiWSh1zGu/bg-texture.jpg" })
                     .resizable()
         ])
                  

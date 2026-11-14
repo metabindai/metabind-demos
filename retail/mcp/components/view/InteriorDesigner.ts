@@ -147,25 +147,25 @@ const EXAMPLE_PRODUCTS: HydratedProduct[] = [
         id: "cont_example_throw",
         title: "Woven Dusk Throw",
         price: 89,
-        imageUrl: "https://cdn-dev.metabind.ai/IQDOOSfxsCz6vOufDazi/vIMNFCjt4Hu2QhD4egHR/assets/0brICv9JuBxtlmvCgWuk/woven-dusk-throw.png"
+        imageUrl: "https://cdn.metabind.ai/IgJH0BzIn4LlfnCbcDc7/Q0WNzrjYuO23n6k2EjKE/assets/6n0X2vJVxZg6cxuwcHFL/woven-dusk-throw.png"
     },
     {
         id: "cont_example_cushion",
         title: "Dune Cushion Cover",
         price: 49,
-        imageUrl: "https://cdn-dev.metabind.ai/IQDOOSfxsCz6vOufDazi/vIMNFCjt4Hu2QhD4egHR/assets/Ss4i7of14C9jor5hqtpc/dune-cushion-cover.png"
+        imageUrl: "https://cdn.metabind.ai/IgJH0BzIn4LlfnCbcDc7/Q0WNzrjYuO23n6k2EjKE/assets/BxU2IfrfvT10FMF62Nu0/dune-cushion-cover.png"
     },
     {
         id: "cont_example_mug",
         title: "Ceramic Mug",
         price: 29,
-        imageUrl: "https://cdn-dev.metabind.ai/IQDOOSfxsCz6vOufDazi/vIMNFCjt4Hu2QhD4egHR/assets/Ji3X8BriDjYfA116a6T6/mug.png"
+        imageUrl: "https://cdn.metabind.ai/IgJH0BzIn4LlfnCbcDc7/Q0WNzrjYuO23n6k2EjKE/assets/AQ74LNfGFYl5wEy8bZHv/mug.png"
     }
 ];
 
-const EXAMPLE_GEN_IMAGE = "https://cdn-dev.metabind.ai/IQDOOSfxsCz6vOufDazi/vIMNFCjt4Hu2QhD4egHR/assets/042dBkoDpywIzjIinFtZ/reference-classic-lounge.png";
+const EXAMPLE_GEN_IMAGE = "https://cdn.metabind.ai/IgJH0BzIn4LlfnCbcDc7/Q0WNzrjYuO23n6k2EjKE/assets/pOG8RJyNeyJXS8Rzp4Qy/reference-classic-lounge.png";
 
-const LOGO_URL = "https://cdn-dev.metabind.ai/IQDOOSfxsCz6vOufDazi/vIMNFCjt4Hu2QhD4egHR/components/h63fO5EeUDK2l38vTlas/latest/assets/HOgSWMUfDMSpForukh3q/logo.png";
+const LOGO_URL = "https://cdn.metabind.ai/IgJH0BzIn4LlfnCbcDc7/Q0WNzrjYuO23n6k2EjKE/assets/JVHAM01BrS28jGF6SG6r/o399JyXks3kPQMHxkOuD__oak-ivory_logo.png";
 
 const arrowSVG = `
     <svg width="32" height="72" viewBox="0 0 32 72" fill="none" xmlns="http://www.w3.org/2000/svg">

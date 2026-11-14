@@ -122,13 +122,13 @@ const EXAMPLE_PRODUCTS: HydratedProduct[] = [
         id: "cont_example_walnut_table",
         title: "Heritage Walnut Coffee Table",
         price: 789,
-        imageUrl: "https://cdn-dev.metabind.ai/IQDOOSfxsCz6vOufDazi/LWsOA82uk3xZKMhr3bXc/assets/94MXxT6NMoEdB7pnBM0R/002-an-oak-ivory-brand-coffee-table-high-end.jpg"
+        imageUrl: "https://cdn.metabind.ai/IgJH0BzIn4LlfnCbcDc7/Q0WNzrjYuO23n6k2EjKE/assets/vQ4EmxZtTy6Bx8TE90tq/002-an-oak-ivory-brand-coffee-table-high-end.jpg"
     },
     {
         id: "cont_example_oak_table",
         title: "Ivory Oak Coffee Table",
         price: 849,
-        imageUrl: "https://cdn-dev.metabind.ai/IQDOOSfxsCz6vOufDazi/LWsOA82uk3xZKMhr3bXc/assets/4rfQGSfnSS693OrOjnVL/004-an-oak-ivory-brand-coffee-table-high-end.jpg"
+        imageUrl: "https://cdn.metabind.ai/IgJH0BzIn4LlfnCbcDc7/Q0WNzrjYuO23n6k2EjKE/assets/dQ0P8bwXbWaYIljXmpoq/004-an-oak-ivory-brand-coffee-table-high-end.jpg"
     }
 ];
 
