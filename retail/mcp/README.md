@@ -12,7 +12,7 @@ Everything the project is made of lives in this tree, one file per object:
 
 | Path | What it holds |
 |---|---|
-| `components/data/*.ts` | Handlers for the four data tools, plus `CacheImage`, an internal image cache. |
+| `components/data/*.ts` | Handlers for the four data tools. |
 | `components/view/*.ts` | 22 BindJS view components: the ten card surfaces the assistant renders, and the shared building blocks behind them. |
 | `tools/data/*.json` | The tool definitions the model sees — description, root component, and config (allowed domains, annotations) — one file per tool. |
 | `tools/view/*.json` | Matching definitions for the card tools. |
@@ -29,10 +29,6 @@ The data tools read the catalogue and generate imagery:
 | `product_lookup` | Fetches full product records by id — called by view components to load their own data, not by the model |
 | `inspiration_search` | Style-reference imagery from the shared asset library |
 | `nano_banana_image_generator` | Generates room and product imagery with Gemini — needs `GEMINI_API_KEY` |
-
-`CacheImage` is a fifth data component with no tool of its own: an image
-cache wrapped around the generator, so repeating a room design doesn't pay
-for a second generation.
 
 The view tools are the surfaces the assistant can put on screen:
 
