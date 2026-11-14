@@ -3,6 +3,6 @@
   "config": {
     "title": "Product Detail"
   },
-  "description": "A split-out product detail card with image, CTA, description, features, and reviews.\nAlways try and pass features based off the description/ information you know about the product.",
+  "description": "A product detail card with the product image, description, key features, an optional rating and a call to action. Pass the product id and a short list of features drawn from the product's description.",
   "rootComponent": "ProductDetail"
 }

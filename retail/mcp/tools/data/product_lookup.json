@@ -13,6 +13,6 @@
     },
     "title": "Product Lookup"
   },
-  "description": "Fetch one or more Oak&Ivory products by id. Never call this from the LLM. This is only to be called from ui tools. ",
+  "description": "Fetches full Oak & Ivory product records by id. The product views call it to load the products they display.",
   "rootComponent": "ProductLookup"
 }

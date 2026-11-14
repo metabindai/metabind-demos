@@ -3,6 +3,6 @@
   "config": {
     "title": "Product Recommendations"
   },
-  "description": "Presents product recommendations",
+  "description": "A styling recommendation: a short assessment of the shopper's space followed by recommended products, each with a note on why it fits. Pass the framing paragraph, a two-to-four-word summary, the product ids and one note per product.",
   "rootComponent": "ProductRecommendation"
 }

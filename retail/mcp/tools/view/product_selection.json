@@ -3,6 +3,6 @@
   "config": {
     "title": "Product Selection"
   },
-  "description": "Always, 100% , every time, use this when the user specifically says \"Start a design based on products I've purchased.\". But in that case do not pass any products, as the defaults will be fine.",
+  "description": "A picker for the shopper's previously purchased products. The shopper selects items, and the choice comes back to the conversation as the next message, prefixed with `prompt`. With no items passed, it shows the demo purchase history.",
   "rootComponent": "ProductSelection"
 }

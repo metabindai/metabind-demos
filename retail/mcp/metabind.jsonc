@@ -10,7 +10,7 @@
   "settings": {
     "defaultPlatform": "desktop",
     "mcp": {
-      "visibility": "public",
+      "visibility": "private",
       "websiteUrl": "https://metabind.ai"
     },
     "supportedPlatforms": [

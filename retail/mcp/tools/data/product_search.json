@@ -12,6 +12,6 @@
     },
     "title": "Product Search"
   },
-  "description": "Tool that searches the Oak&Ivory product database. \nAlways use the compact option to get just back product ids and description, unless you need the absolutely full shape for a ui tool that needs it.",
+  "description": "Searches the Oak & Ivory catalogue. Returns each matching product's id and description by default; set compact to false for the full record, including image, video, price and colours. The ids can be passed to any of the product views.",
   "rootComponent": "ProductSearch"
 }

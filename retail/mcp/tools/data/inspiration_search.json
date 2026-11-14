@@ -12,6 +12,6 @@
     },
     "title": "Inspiration Search"
   },
-  "description": "Search Reference-tagged assets via the Metabind Assets API",
+  "description": "Lists the Oak & Ivory inspiration library: reference room photos, each with an id, a title and an image URL. Set compact to return only those three fields.",
   "rootComponent": "InspirationSearch"
 }

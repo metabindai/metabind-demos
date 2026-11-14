@@ -3,6 +3,6 @@
   "config": {
     "title": "Product Comparison"
   },
-  "description": "A dynamic product comparison table with configurable products and dimensions",
+  "description": "A side-by-side comparison table for two or more products. Pass the product ids and one row per attribute to compare, such as price, size or materials, with one value per product.",
   "rootComponent": "ProductComparison"
 }

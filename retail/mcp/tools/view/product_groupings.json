@@ -3,6 +3,6 @@
   "config": {
     "title": "Product Groupings"
   },
-  "description": "Product Groupings view displays personalized product suggestions to users based on their browsing and purchase history.\nPrefer the productIds shape for populating the carousel",
+  "description": "Products arranged in titled sections, such as one per room or style. Pass one section per group, each with a title and its products.",
   "rootComponent": "ProductGroupings"
 }

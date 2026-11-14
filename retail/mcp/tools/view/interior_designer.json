@@ -3,6 +3,6 @@
   "config": {
     "title": "Interior Designer"
   },
-  "description": "Interior Designer is a view component that displays and manages interior design layouts, spaces, and visual styling configurations.",
+  "description": "A room moodboard: the chosen products and a colour palette on one board, with a generated image of a styled room that features them. Pass up to three product ids, three or four palette colours, a short title and description, and a detailed prompt for the room image.",
   "rootComponent": "InteriorDesigner"
 }
